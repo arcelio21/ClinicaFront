@@ -53,6 +53,24 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.12.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.12.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.primefaces</groupId>
+            <artifactId>primefaces</artifactId>
+            <version>11.0.0</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -61,6 +79,42 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>3.3.2</version>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jaxws-maven-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <vmArgs>
+                        <vmArg>
+                            -Djavax.xml.accessExternalSchema=all
+                        </vmArg>
+                    </vmArgs>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                        <configuration>
+                            <wsdlUrls>
+                                <wsdlUrl>
+                                    http://192.168.137.1:7001/TaddressServiceImpl/TaddressServiceImplService?WSDL
+                                </wsdlUrl>
+                                <wsdlUrl>http://192.168.137.1:7001/TdistrictServiceImpl/TdistrictServiceImplService?WSDL</wsdlUrl>
+                                <wsdlUrl>http://192.168.137.1:7001/TprovinceServiceImpl/TprovinceServiceImplService?WSDL</wsdlUrl>
+                                <wsdlUrl>http://192.168.137.1:7001/TstatusServiceImpl/TstatusServiceImplService?WSDL </wsdlUrl>
+                                <wsdlUrl>http://192.168.137.1:7001/TtypeUserServiceImpl/TtypeUserServiceImplService?WSDL</wsdlUrl>
+                                <wsdlUrl>http://192.168.137.1:7001/TuserTypeRegsServiceImpl/TuserTypeRegsServiceImplService?WSDL</wsdlUrl>
+                                <wsdlUrl>http://192.168.137.1:7001/TusuarioRegsServiceImpl/TusuarioRegsServiceImplService?WSDL</wsdlUrl>
+                                <wsdlUrl>http://192.168.137.1:7001/TvillageServiceImpl/TvillageServiceImplService?WSDL</wsdlUrl>
+                            </wsdlUrls>
+                            <packageName>com.clinicacliente.service</packageName>
+                            <sourceDestDir>${basedir}/src/main/java</sourceDestDir>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
