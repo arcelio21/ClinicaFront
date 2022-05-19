@@ -6,7 +6,52 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
         xmlns:p="http://primefaces.org/ui">
-    <h:head>
+
+<ui:composition template="WEB-INF/Template.xhtml">
+    <ui:define name="head">
+        <title>Inicio de sesi&oacute;n</title>
+        <h:outputStylesheet library="css" name="index.css" />
+    </ui:define>
+    <ui:define name="contentemp">
+
+
+        <h1>Bienvenido</h1>
+        <h2>Inicio de sesi&oacute;n</h2>
+
+        <div id="logIn">
+            <h:form id="formLogin">
+                <table border="1">
+                    <tbody>
+                    <tr>
+                        <td><h:outputText value="Cedula"/></td>
+                        <td>
+                            <h:inputText id="cedula" value="#{usuarioValidacion.user}">
+                                <f:passThroughAttribute name="placeholder" value="Ingrese cedula"></f:passThroughAttribute>
+                            </h:inputText>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><h:outputText value="Contraseña"/></td>
+                        <td>
+                            <h:inputSecret id="pass" value="#{usuarioValidacion.pass}">
+                                <f:passThroughAttribute name="placeholder" value="Ingrese contraseña"></f:passThroughAttribute>
+                            </h:inputSecret>
+                        </td>
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <td colspan="2" ><h:commandButton value="Ingresar" action="#{index.validarUser()}"/></td>
+                    </tr>
+                    </tfoot>
+                </table>
+            </h:form>
+        </div>
+
+
+    </ui:define>
+</ui:composition>
+    <!--<h:head>
         <title>Inicio</title>
     </h:head>
 
@@ -17,17 +62,17 @@
             <table border="1">
                 <tbody>
                     <tr>
-                        <td><h:outputText value="Nombre"/></td>
+                        <td><h:outputText value="Cedula"/></td>
                         <td>
-                            <h:inputText id="name">
-                                <f:passThroughAttribute name="placeholder" value="Ingrese nombre"></f:passThroughAttribute>
+                            <h:inputText id="cedula" value="#{usuarioValidacion.user}">
+                                <f:passThroughAttribute name="placeholder" value="Ingrese cedula"></f:passThroughAttribute>
                             </h:inputText>
                         </td>
                     </tr>
                     <tr>
                         <td><h:outputText value="Contraseña"/></td>
                         <td>
-                            <h:inputSecret id="pass" >
+                            <h:inputSecret id="pass" value="#{usuarioValidacion.pass}">
                                 <f:passThroughAttribute name="placeholder" value="Ingrese contraseña"></f:passThroughAttribute>
                             </h:inputSecret>
                         </td>
@@ -35,13 +80,13 @@
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td colspan="2" ><h:commandButton value="Ingresar"/></td>
+                        <td colspan="2" ><h:commandButton value="Ingresar" action="#{index.validarUser()}"/></td>
                     </tr>
                 </tfoot>
             </table>
         </h:form>
 
     </h:body>
-
+-->
 
 </html>
