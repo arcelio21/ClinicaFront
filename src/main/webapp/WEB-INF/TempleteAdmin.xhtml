@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <head>
+        <ui:insert name="title">
+            <title>Home Administrador</title>
+            <link rel="stylesheet" type="text/css" href="../resources/css/templateAdmin.css"/>
+        </ui:insert>
+
+    </head>
+
+    <body>
+        <div id="container">
+
+
+
+       <header>
+           <ui:insert name="header">
+               <h1>Clinica UTP</h1>
+           </ui:insert>
+
+
+       </header>
+       <nav>
+           <ui:insert name="nav">
+               <h2>Administrador</h2>
+           </ui:insert>
+
+       </nav>
+
+        <aside >
+            <ui:include src="referencesList/refAdminList.xhtml" />
+
+        </aside>
+
+        <article>
+            <ui:insert name="body">
+                <h2>Bienvenido #{usuarioValidacion.fullaName}</h2>
+            </ui:insert>
+        </article>
+
+        <footer>
+            <ui:insert name="footer">
+                <h2>Autor: Arcelio Montezuma</h2>
+                <h2>Copyright © 2022</h2>
+            </ui:insert>
+        </footer>
+        </div>
+    </body>
+</html>

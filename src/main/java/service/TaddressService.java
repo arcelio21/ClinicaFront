@@ -33,10 +33,40 @@ public interface TaddressService {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "updateAddress", targetNamespace = "http://addressService.service.clinicawebservice.com/", className = "service.UpdateAddress")
-    @ResponseWrapper(localName = "updateAddressResponse", targetNamespace = "http://addressService.service.clinicawebservice.com/", className = "service.UpdateAddressResponse")
-    @Action(input = "http://addressService.service.clinicawebservice.com/TaddressService/updateAddressRequest", output = "http://addressService.service.clinicawebservice.com/TaddressService/updateAddressResponse")
-    public boolean updateAddress(
+    @RequestWrapper(localName = "insertAddress", targetNamespace = "http://addressService.service.clinicawebservice.com/", className = "service.InsertAddress")
+    @ResponseWrapper(localName = "insertAddressResponse", targetNamespace = "http://addressService.service.clinicawebservice.com/", className = "service.InsertAddressResponse")
+    @Action(input = "http://addressService.service.clinicawebservice.com/TaddressService/insertAddressRequest", output = "http://addressService.service.clinicawebservice.com/TaddressService/insertAddressResponse")
+    public boolean insertAddress(
+        @WebParam(name = "arg0", targetNamespace = "")
+        TaddressDto arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns service.TaddressDto
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "searchAddressById", targetNamespace = "http://addressService.service.clinicawebservice.com/", className = "service.SearchAddressById")
+    @ResponseWrapper(localName = "searchAddressByIdResponse", targetNamespace = "http://addressService.service.clinicawebservice.com/", className = "service.SearchAddressByIdResponse")
+    @Action(input = "http://addressService.service.clinicawebservice.com/TaddressService/searchAddressByIdRequest", output = "http://addressService.service.clinicawebservice.com/TaddressService/searchAddressByIdResponse")
+    public TaddressDto searchAddressById(
+        @WebParam(name = "arg0", targetNamespace = "")
+        TaddressDto arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "deleteAddress", targetNamespace = "http://addressService.service.clinicawebservice.com/", className = "service.DeleteAddress")
+    @ResponseWrapper(localName = "deleteAddressResponse", targetNamespace = "http://addressService.service.clinicawebservice.com/", className = "service.DeleteAddressResponse")
+    @Action(input = "http://addressService.service.clinicawebservice.com/TaddressService/deleteAddressRequest", output = "http://addressService.service.clinicawebservice.com/TaddressService/deleteAddressResponse")
+    public boolean deleteAddress(
         @WebParam(name = "arg0", targetNamespace = "")
         TaddressDto arg0);
 
@@ -60,40 +90,10 @@ public interface TaddressService {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "insertAddress", targetNamespace = "http://addressService.service.clinicawebservice.com/", className = "service.InsertAddress")
-    @ResponseWrapper(localName = "insertAddressResponse", targetNamespace = "http://addressService.service.clinicawebservice.com/", className = "service.InsertAddressResponse")
-    @Action(input = "http://addressService.service.clinicawebservice.com/TaddressService/insertAddressRequest", output = "http://addressService.service.clinicawebservice.com/TaddressService/insertAddressResponse")
-    public boolean insertAddress(
-        @WebParam(name = "arg0", targetNamespace = "")
-        TaddressDto arg0);
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns boolean
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "deleteAddress", targetNamespace = "http://addressService.service.clinicawebservice.com/", className = "service.DeleteAddress")
-    @ResponseWrapper(localName = "deleteAddressResponse", targetNamespace = "http://addressService.service.clinicawebservice.com/", className = "service.DeleteAddressResponse")
-    @Action(input = "http://addressService.service.clinicawebservice.com/TaddressService/deleteAddressRequest", output = "http://addressService.service.clinicawebservice.com/TaddressService/deleteAddressResponse")
-    public boolean deleteAddress(
-        @WebParam(name = "arg0", targetNamespace = "")
-        TaddressDto arg0);
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns service.TaddressDto
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "searchAddressById", targetNamespace = "http://addressService.service.clinicawebservice.com/", className = "service.SearchAddressById")
-    @ResponseWrapper(localName = "searchAddressByIdResponse", targetNamespace = "http://addressService.service.clinicawebservice.com/", className = "service.SearchAddressByIdResponse")
-    @Action(input = "http://addressService.service.clinicawebservice.com/TaddressService/searchAddressByIdRequest", output = "http://addressService.service.clinicawebservice.com/TaddressService/searchAddressByIdResponse")
-    public TaddressDto searchAddressById(
+    @RequestWrapper(localName = "updateAddress", targetNamespace = "http://addressService.service.clinicawebservice.com/", className = "service.UpdateAddress")
+    @ResponseWrapper(localName = "updateAddressResponse", targetNamespace = "http://addressService.service.clinicawebservice.com/", className = "service.UpdateAddressResponse")
+    @Action(input = "http://addressService.service.clinicawebservice.com/TaddressService/updateAddressRequest", output = "http://addressService.service.clinicawebservice.com/TaddressService/updateAddressResponse")
+    public boolean updateAddress(
         @WebParam(name = "arg0", targetNamespace = "")
         TaddressDto arg0);
 

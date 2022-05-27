@@ -91,6 +91,7 @@ service\ListDistricts.class
 service\ListProvinces.class
 service\DeleteTypeUser.class
 service\TstatusServiceImplService.class
+com\clinicacliente\controller\administrador\listUser\ListUser.class
 service\TuserTypeRegsService.class
 service\UpdateVillageResponse.class
 service\TstatusService.class

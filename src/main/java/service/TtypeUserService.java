@@ -41,36 +41,6 @@ public interface TtypeUserService {
      * 
      * @param arg0
      * @return
-     *     returns service.TtypeUserDto
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "searchTypeUserById", targetNamespace = "http://typeUserService.usersinfoService.service.clinicawebservice.com/", className = "service.SearchTypeUserById")
-    @ResponseWrapper(localName = "searchTypeUserByIdResponse", targetNamespace = "http://typeUserService.usersinfoService.service.clinicawebservice.com/", className = "service.SearchTypeUserByIdResponse")
-    @Action(input = "http://typeUserService.usersinfoService.service.clinicawebservice.com/TtypeUserService/searchTypeUserByIdRequest", output = "http://typeUserService.usersinfoService.service.clinicawebservice.com/TtypeUserService/searchTypeUserByIdResponse")
-    public TtypeUserDto searchTypeUserById(
-        @WebParam(name = "arg0", targetNamespace = "")
-        TtypeUserDto arg0);
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns boolean
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "deleteTypeUser", targetNamespace = "http://typeUserService.usersinfoService.service.clinicawebservice.com/", className = "service.DeleteTypeUser")
-    @ResponseWrapper(localName = "deleteTypeUserResponse", targetNamespace = "http://typeUserService.usersinfoService.service.clinicawebservice.com/", className = "service.DeleteTypeUserResponse")
-    @Action(input = "http://typeUserService.usersinfoService.service.clinicawebservice.com/TtypeUserService/deleteTypeUserRequest", output = "http://typeUserService.usersinfoService.service.clinicawebservice.com/TtypeUserService/deleteTypeUserResponse")
-    public boolean deleteTypeUser(
-        @WebParam(name = "arg0", targetNamespace = "")
-        TtypeUserDto arg0);
-
-    /**
-     * 
-     * @param arg0
-     * @return
      *     returns boolean
      */
     @WebMethod
@@ -94,6 +64,36 @@ public interface TtypeUserService {
     @ResponseWrapper(localName = "updateTypeUserResponse", targetNamespace = "http://typeUserService.usersinfoService.service.clinicawebservice.com/", className = "service.UpdateTypeUserResponse")
     @Action(input = "http://typeUserService.usersinfoService.service.clinicawebservice.com/TtypeUserService/updateTypeUserRequest", output = "http://typeUserService.usersinfoService.service.clinicawebservice.com/TtypeUserService/updateTypeUserResponse")
     public boolean updateTypeUser(
+        @WebParam(name = "arg0", targetNamespace = "")
+        TtypeUserDto arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns service.TtypeUserDto
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "searchTypeUserById", targetNamespace = "http://typeUserService.usersinfoService.service.clinicawebservice.com/", className = "service.SearchTypeUserById")
+    @ResponseWrapper(localName = "searchTypeUserByIdResponse", targetNamespace = "http://typeUserService.usersinfoService.service.clinicawebservice.com/", className = "service.SearchTypeUserByIdResponse")
+    @Action(input = "http://typeUserService.usersinfoService.service.clinicawebservice.com/TtypeUserService/searchTypeUserByIdRequest", output = "http://typeUserService.usersinfoService.service.clinicawebservice.com/TtypeUserService/searchTypeUserByIdResponse")
+    public TtypeUserDto searchTypeUserById(
+        @WebParam(name = "arg0", targetNamespace = "")
+        TtypeUserDto arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "deleteTypeUser", targetNamespace = "http://typeUserService.usersinfoService.service.clinicawebservice.com/", className = "service.DeleteTypeUser")
+    @ResponseWrapper(localName = "deleteTypeUserResponse", targetNamespace = "http://typeUserService.usersinfoService.service.clinicawebservice.com/", className = "service.DeleteTypeUserResponse")
+    @Action(input = "http://typeUserService.usersinfoService.service.clinicawebservice.com/TtypeUserService/deleteTypeUserRequest", output = "http://typeUserService.usersinfoService.service.clinicawebservice.com/TtypeUserService/deleteTypeUserResponse")
+    public boolean deleteTypeUser(
         @WebParam(name = "arg0", targetNamespace = "")
         TtypeUserDto arg0);
 

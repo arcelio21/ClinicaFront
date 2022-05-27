@@ -27,6 +27,21 @@ public interface TstatusService {
 
     /**
      * 
+     * @param arg0
+     * @return
+     *     returns boolean
+     */
+    @WebMethod(operationName = "UPDATE_STATUS")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "UPDATE_STATUS", targetNamespace = "http://statusService.service.clinicawebservice.com/", className = "service.UPDATESTATUS")
+    @ResponseWrapper(localName = "UPDATE_STATUSResponse", targetNamespace = "http://statusService.service.clinicawebservice.com/", className = "service.UPDATESTATUSResponse")
+    @Action(input = "http://statusService.service.clinicawebservice.com/TstatusService/UPDATE_STATUSRequest", output = "http://statusService.service.clinicawebservice.com/TstatusService/UPDATE_STATUSResponse")
+    public boolean updateSTATUS(
+        @WebParam(name = "arg0", targetNamespace = "")
+        TstatusDto arg0);
+
+    /**
+     * 
      * @return
      *     returns java.util.List<service.TstatusDto>
      */
@@ -58,21 +73,6 @@ public interface TstatusService {
      * @return
      *     returns boolean
      */
-    @WebMethod(operationName = "DELETE_STATUS")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "DELETE_STATUS", targetNamespace = "http://statusService.service.clinicawebservice.com/", className = "service.DELETESTATUS")
-    @ResponseWrapper(localName = "DELETE_STATUSResponse", targetNamespace = "http://statusService.service.clinicawebservice.com/", className = "service.DELETESTATUSResponse")
-    @Action(input = "http://statusService.service.clinicawebservice.com/TstatusService/DELETE_STATUSRequest", output = "http://statusService.service.clinicawebservice.com/TstatusService/DELETE_STATUSResponse")
-    public boolean deleteSTATUS(
-        @WebParam(name = "arg0", targetNamespace = "")
-        TstatusDto arg0);
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns boolean
-     */
     @WebMethod(operationName = "INSERT_STATUS")
     @WebResult(targetNamespace = "")
     @RequestWrapper(localName = "INSERT_STATUS", targetNamespace = "http://statusService.service.clinicawebservice.com/", className = "service.INSERTSTATUS")
@@ -88,12 +88,12 @@ public interface TstatusService {
      * @return
      *     returns boolean
      */
-    @WebMethod(operationName = "UPDATE_STATUS")
+    @WebMethod(operationName = "DELETE_STATUS")
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "UPDATE_STATUS", targetNamespace = "http://statusService.service.clinicawebservice.com/", className = "service.UPDATESTATUS")
-    @ResponseWrapper(localName = "UPDATE_STATUSResponse", targetNamespace = "http://statusService.service.clinicawebservice.com/", className = "service.UPDATESTATUSResponse")
-    @Action(input = "http://statusService.service.clinicawebservice.com/TstatusService/UPDATE_STATUSRequest", output = "http://statusService.service.clinicawebservice.com/TstatusService/UPDATE_STATUSResponse")
-    public boolean updateSTATUS(
+    @RequestWrapper(localName = "DELETE_STATUS", targetNamespace = "http://statusService.service.clinicawebservice.com/", className = "service.DELETESTATUS")
+    @ResponseWrapper(localName = "DELETE_STATUSResponse", targetNamespace = "http://statusService.service.clinicawebservice.com/", className = "service.DELETESTATUSResponse")
+    @Action(input = "http://statusService.service.clinicawebservice.com/TstatusService/DELETE_STATUSRequest", output = "http://statusService.service.clinicawebservice.com/TstatusService/DELETE_STATUSResponse")
+    public boolean deleteSTATUS(
         @WebParam(name = "arg0", targetNamespace = "")
         TstatusDto arg0);
 

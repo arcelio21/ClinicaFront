@@ -27,21 +27,6 @@ public interface TuserTypeRegsService {
 
     /**
      * 
-     * @param arg0
-     * @return
-     *     returns boolean
-     */
-    @WebMethod(operationName = "DELETE_USER_TYPE_REG")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "DELETE_USER_TYPE_REG", targetNamespace = "http://typeUserService.usersinfoService.service.clinicawebservice.com/", className = "service.DELETEUSERTYPEREG")
-    @ResponseWrapper(localName = "DELETE_USER_TYPE_REGResponse", targetNamespace = "http://typeUserService.usersinfoService.service.clinicawebservice.com/", className = "service.DELETEUSERTYPEREGResponse")
-    @Action(input = "http://typeUserService.usersinfoService.service.clinicawebservice.com/TuserTypeRegsService/DELETE_USER_TYPE_REGRequest", output = "http://typeUserService.usersinfoService.service.clinicawebservice.com/TuserTypeRegsService/DELETE_USER_TYPE_REGResponse")
-    public boolean deleteUSERTYPEREG(
-        @WebParam(name = "arg0", targetNamespace = "")
-        TuserTypeRegDto arg0);
-
-    /**
-     * 
      * @return
      *     returns java.util.List<service.TuserTypeRegDto>
      */
@@ -79,6 +64,21 @@ public interface TuserTypeRegsService {
     @ResponseWrapper(localName = "UPDATE_USER_TYPE_REGSResponse", targetNamespace = "http://typeUserService.usersinfoService.service.clinicawebservice.com/", className = "service.UPDATEUSERTYPEREGSResponse")
     @Action(input = "http://typeUserService.usersinfoService.service.clinicawebservice.com/TuserTypeRegsService/UPDATE_USER_TYPE_REGSRequest", output = "http://typeUserService.usersinfoService.service.clinicawebservice.com/TuserTypeRegsService/UPDATE_USER_TYPE_REGSResponse")
     public boolean updateUSERTYPEREGS(
+        @WebParam(name = "arg0", targetNamespace = "")
+        TuserTypeRegDto arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns boolean
+     */
+    @WebMethod(operationName = "DELETE_USER_TYPE_REG")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "DELETE_USER_TYPE_REG", targetNamespace = "http://typeUserService.usersinfoService.service.clinicawebservice.com/", className = "service.DELETEUSERTYPEREG")
+    @ResponseWrapper(localName = "DELETE_USER_TYPE_REGResponse", targetNamespace = "http://typeUserService.usersinfoService.service.clinicawebservice.com/", className = "service.DELETEUSERTYPEREGResponse")
+    @Action(input = "http://typeUserService.usersinfoService.service.clinicawebservice.com/TuserTypeRegsService/DELETE_USER_TYPE_REGRequest", output = "http://typeUserService.usersinfoService.service.clinicawebservice.com/TuserTypeRegsService/DELETE_USER_TYPE_REGResponse")
+    public boolean deleteUSERTYPEREG(
         @WebParam(name = "arg0", targetNamespace = "")
         TuserTypeRegDto arg0);
 

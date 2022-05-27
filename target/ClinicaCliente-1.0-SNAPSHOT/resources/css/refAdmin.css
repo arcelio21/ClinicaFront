@@ -1,0 +1,30 @@
+h3{
+    color: white;
+    margin-bottom: 6%;
+}
+li{
+    margin-left: 10%;
+}
+.options{
+    color: white;
+    text-decoration: none;
+
+}
+
+.links:link{
+
+}
+.links:visited{
+    text-decoration: none;
+}
+
+.options:hover{
+    color: #505085;
+    border-bottom: 2px solid #3f3fa1;
+    padding-left: 5%;
+    background-color: white;
+}
+
+.links:focus{
+
+}

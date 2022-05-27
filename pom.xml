@@ -100,15 +100,15 @@
                         <configuration>
                             <wsdlUrls>
                                 <wsdlUrl>
-                                    http://192.168.0.7:7001/TaddressServiceImpl/TaddressServiceImplService?WSDL
+                                    http://192.168.137.1:7001/TaddressServiceImpl/TaddressServiceImplService?WSDL
                                 </wsdlUrl>
-                                <wsdlUrl>http://192.168.0.7:7001/TdistrictServiceImpl/TdistrictServiceImplService?WSDL</wsdlUrl>
-                                <wsdlUrl>http://192.168.0.7:7001/TprovinceServiceImpl/TprovinceServiceImplService?WSDL</wsdlUrl>
-                                <wsdlUrl>http://192.168.0.7:7001/TstatusServiceImpl/TstatusServiceImplService?WSDL </wsdlUrl>
-                                <wsdlUrl>http://192.168.0.7:7001/TtypeUserServiceImpl/TtypeUserServiceImplService?WSDL</wsdlUrl>
-                                <wsdlUrl>http://192.168.0.7:7001/TuserTypeRegsServiceImpl/TuserTypeRegsServiceImplService?WSDL</wsdlUrl>
-                                <wsdlUrl>http://192.168.0.7:7001/TusuarioRegsServiceImpl/TusuarioRegsServiceImplService?WSDL</wsdlUrl>
-                                <wsdlUrl>http://192.168.0.7:7001/TvillageServiceImpl/TvillageServiceImplService?WSDL</wsdlUrl>
+                                <wsdlUrl>http://192.168.137.1:7001/TdistrictServiceImpl/TdistrictServiceImplService?WSDL</wsdlUrl>
+                                <wsdlUrl>http://192.168.137.1:7001/TprovinceServiceImpl/TprovinceServiceImplService?WSDL</wsdlUrl>
+                                <wsdlUrl>http://192.168.137.1:7001/TstatusServiceImpl/TstatusServiceImplService?WSDL </wsdlUrl>
+                                <wsdlUrl>http://192.168.137.1:7001/TtypeUserServiceImpl/TtypeUserServiceImplService?WSDL</wsdlUrl>
+                                <wsdlUrl>http://192.168.137.1:7001/TuserTypeRegsServiceImpl/TuserTypeRegsServiceImplService?WSDL</wsdlUrl>
+                                <wsdlUrl>http://192.168.137.1:7001/TusuarioRegsServiceImpl/TusuarioRegsServiceImplService?WSDL</wsdlUrl>
+                                <wsdlUrl>http://192.168.137.1:7001/TvillageServiceImpl/TvillageServiceImplService?WSDL</wsdlUrl>
                             </wsdlUrls>
                             <packageName>service</packageName>
                             <sourceDestDir>${basedir}/src/main/java</sourceDestDir>

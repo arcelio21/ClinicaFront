@@ -13,12 +13,18 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
-<ui:composition >
-    <ul>
-        <h:form>
-            <li>  <h:link value="Listado de usuarios" outcome="/Administrador/ListUser/RegisterUser" onfocus=""/></li>
 
-        </h:form>
+
+<ui:composition >
+    <h:head>
+        <h:outputStylesheet library="css" name="refAdmin.css" />
+    </h:head>
+    <h3>Lista de opciones</h3>
+    <ul>
+        <li><h:link styleClass="options" value="Listar usuarios" outcome="#{index.validarRango()}" /></li>
+            <li><h:link  styleClass="options" value="Cerrar sesi&oacute;n" outcome="/index"/></li>
+
+
 
 
     </ul>

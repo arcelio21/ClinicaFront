@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+
+<h:body>
+    <ui:composition><!--AL COLOCAR COMPISITION, SE ASEGURA QUE AL HACER EL INCLUDE EN OTRO ARCHIVO SOLO SE AGREGGUE LOS TAGS ESCRITOS DENTRO DEL COMPOSITION-->
+        <!--VENTANA MODAL PARA AGREGAR PERSONA-->
+        <p:dialog id="userAddDlg"  widgetVar="addUserDialog" header="Agregar nuevo usuario" modal="true"  showEffect="fade" hideEffect="fade" resizable="false">
+            <!--widgetVar: para poder referecniar el elemento(nombre), modal: para que se muestre encima de la pag HTML,
+                       showEfect & hideEfecte: para que se oculte y muestre paulatinamente el dialog; rizable: para que no se pueda reajustar el tamaño del dialog -->
+            <p:ajax event="close" listener="#{listuser.editUser()}" update=":addUserFormDlg" />
+
+            <!--FORMULARIO DE ADD_USER-->
+            <h:form id="addUserFormDlg">
+                <p:outputPanel id="userDetail">
+                    <p:panelGrid id="display" columns="4"   columnClasses="label,value">
+
+                        <h:outputText value="Cedula" />
+                        <h:inputText value="#{listuser.newUser.idenCard}" required="true" readonly="#{listuser.newUser.idenCard!=null}"/>
+
+                        <h:outputText value="Nombre" />
+                        <h:inputText value="#{listuser.newUser.nameUser}" required="true"/>
+
+                        <h:outputText value="Apellido" />
+                        <h:inputText value="#{listuser.newUser.lastName}" required="true"/>
+
+                        <h:outputText value="Contacto" />
+                        <h:inputText value="#{listuser.newUser.contact}"  />
+
+                        <h:outputText value="E-mail" />
+                        <h:inputText value="#{listuser.newUser.email}"  required="true" />
+
+                        <h:outputText value="Contraseña" />
+                        <h:inputSecret value="#{listuser.newUser.pass}" required="true"/>
+
+                        <h:outputText value="Direccion" />
+                        <h:inputText value="#{listuser.userSelect.idAddressId}" required="true"/>
+
+                        <f:facet name="footer">
+                            <p:commandButton value="Guardar" rendered="#{listuser.newUser.idenCard==null}" update="display,:user_Data" actionListener="#{listuser.userRegAdd()}" oncomplete="PF('addUserDialog').hide();">
+                                <!--update: para que se actualice la tabla de datos; oncomplete: se oculta el panel de dialogo-->
+
+                            </p:commandButton>
+
+                        </f:facet>
+                        <f:facet name="footer">
+                            <p:commandButton immediate="true" value="Guardar cambios" rendered="#{listuser.newUser.idenCard!=null}" update="display,:user_Data" actionListener="#{listuser.updateUser()}" oncomplete="PF('addUserDialog').hide();">
+                                <!--update: para que se actualice la tabla de datos; oncomplete: se oculta el panel de dialogo-->
+
+                            </p:commandButton>
+                        </f:facet>
+
+
+                    </p:panelGrid>
+
+                </p:outputPanel>
+            </h:form>
+
+        </p:dialog>
+    </ui:composition>
+</h:body>
+
+</html>

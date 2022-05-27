@@ -1,5 +1,6 @@
 package com.clinicacliente.model;
 
+import javax.enterprise.context.RequestScoped;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 import java.io.Serializable;
@@ -9,23 +10,27 @@ import java.io.Serializable;
 public class UsuarioValidacion implements Serializable {
     private static final long serialVersionUID=1l;
 
-    private String user="";
+    private String idenCard="";
     private String pass="";
+    private String fullaName="";
 
-    public UsuarioValidacion(String user, String pass) {
-        this.user = user;
+
+
+    public UsuarioValidacion(String idenCard, String pass, String fullaName) {
+        this.idenCard = idenCard;
         this.pass = pass;
+        this.fullaName = fullaName;
     }
 
     public UsuarioValidacion() {
     }
 
-    public String getUser() {
-        return user;
+    public String getIdenCard() {
+        return idenCard;
     }
 
-    public void setUser(String user) {
-        this.user = user;
+    public void setIdenCard(String idenCard) {
+        this.idenCard = idenCard;
     }
 
     public String getPass() {
@@ -36,11 +41,20 @@ public class UsuarioValidacion implements Serializable {
         this.pass = pass;
     }
 
+    public String getFullaName() {
+        return fullaName;
+    }
+
+    public void setFullaName(String fullaName) {
+        this.fullaName = fullaName;
+    }
+
     @Override
     public String toString() {
         return "UsuarioValidacion{" +
-                "user='" + user + '\'' +
+                "idenCard='" + idenCard + '\'' +
                 ", pass='" + pass + '\'' +
+                ", fullaName='" + fullaName + '\'' +
                 '}';
     }
 }

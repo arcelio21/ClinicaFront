@@ -1,4 +1,230 @@
-#logIn{
+#container{
+    background-color: #505085;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(5,1fr);
+    grid-template-areas: 'left left right right'
+    'left left right right'
+    'left left right right'
+    'left left right right'
+    'footerG footerG footerG footerG';
+}
+#header{
+    grid-area: left;
+    border: 0;
     display: grid;
-    justify-items: center;
+    align-content: center;
+    color: white;
+}
+
+#Content{
+    grid-area: right;
+    display: grid;
+    padding: 5%;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows:repeat(4,1fr);
+    grid-template-areas:
+                        'sesion sesion sesion'
+                            'sesion sesion sesion'
+                        'sesion sesion sesion'
+                        'sesion sesion sesion';
+
+    border: 0;
+}
+#bienvenido{
+    margin: 0;
+    text-align: center;
+}
+#logIn{
+    display:grid;
+    /*justify-items: center;*/
+    /* width: 40%;
+     height: 60%;*/
+    grid-area: sesion;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-areas: 'formL formL formL';
+}
+#tileLog{
+    border: 2px solid white;
+    box-sizing: border-box;
+    margin: 0;
+    text-align: center;
+}
+
+
+#formLogin{
+    /*width: 60%;
+    height: 100%;
+    border: 1px solid white;*/
+   /* margin: 0 auto;*/
+    grid-area:formL ;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 5%;
+    border-left: 2px solid white;
+    padding: 2%;
+    /*opacity: 0.5; PARA DARLE OPACIDAD O TRANSAPARENCIA A UN SELECTOR O IMG*/
+
+}
+
+.cedula{
+    flex-grow: 3;
+    border-radius: 50px;
+    border:0;
+    padding: 2% 2%;
+    font-family: "Times New Roman";
+    text-align: center;
+    font-size: 14pt;
+
+}
+
+
+.cedula:focus{
+    border: 1px solid blueviolet;
+}
+
+.cedula::placeholder{
+    text-align: center;
+    font-size: 14pt;
+
+}
+
+.pass{
+    flex-grow: 4;
+    border-radius: 50px;
+    border: 0;
+    padding: 2% 2%;
+    font-family: "Times New Roman";
+    font-size: 14pt;
+    text-align: center;
+}
+
+.pass:focus{
+    border: 1px solid blueviolet;
+}
+.pass::placeholder{
+    text-align: center;
+    font-size: 14pt;
+}
+#opciones{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    padding-right: 10%;
+    padding-left: 10%;
+
+
+}
+.pasSRemenber{
+    flex-grow: 1;
+    border-radius: 10%;
+    font-size: 14pt;
+}
+
+/*.check__pasRemenber{
+    margin-bottom: 2%;
+
+}*/
+
+.linkForgetPass{
+    flex-grow: 1;
+    border-radius: 5%;
+    text-align: end;
+    font-size: 14pt;
+}
+
+.btnLogin{
+    flex-grow: 4;
+    border-radius: 20px;
+    align-self: center;
+    width: 50%;
+    height: 40px;
+    margin-bottom: 3%;
+    border: 2px solid #5c5cea;
+    font-size: 14pt;
+    box-sizing: border-box;
+
+}
+
+.btnLogin:hover{
+    /*box-shadow:4px 4px #6060d7;*/
+    border: 2px solid white;
+    background-color: #6060d7;
+    color: white;
+
+}
+
+#imgSession{
+    flex-grow: 1;
+
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+}
+
+
+
+.imgSession__img{
+    flex-grow: 1;
+    width: 40%;
+   /* background-repeat: no-repeat;
+    background-position: 50%;
+    border-radius: 50%;
+    background-size: 100% auto;*/
+}
+
+#footer{
+    border: 0;
+
+}
+
+/*CONFIGURACION DE ESTILOS CON RESOLUCION DE ANCHO DE 510PX*/
+@media  screen and (max-width:510px ) {
+    .pass{
+        font-size: 11pt;
+    }
+    .cedula{
+        font-size: 11pt;
+    }
+
+    .linkForgetPass{
+        font-size: 11pt;
+    }
+
+    .pasSRemenber{
+        font-size: 11pt;
+    }
+}
+
+@media screen and (min-width: 1400px){
+    .pass{
+        font-size: 11pt;
+    }
+    .cedula{
+        font-size: 11pt;
+    }
+
+    .linkForgetPass{
+        font-size: 11pt;
+    }
+
+    .pasSRemenber{
+        font-size: 11pt;
+    }
+
+    .btnLogin{
+
+    }
+    #logIn{
+        justify-content: center;
+    }
+    #formLogin{
+        width: 60%;
+        height: 500px;
+    }
+
+    #footer{
+        align-content: start;
+    }
 }

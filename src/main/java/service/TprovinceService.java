@@ -29,14 +29,14 @@ public interface TprovinceService {
      * 
      * @param arg0
      * @return
-     *     returns service.TprovinceDto
+     *     returns boolean
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "searchProvinceById", targetNamespace = "http://AddressEx.addressService.service.clinicawebservice.com/", className = "service.SearchProvinceById")
-    @ResponseWrapper(localName = "searchProvinceByIdResponse", targetNamespace = "http://AddressEx.addressService.service.clinicawebservice.com/", className = "service.SearchProvinceByIdResponse")
-    @Action(input = "http://AddressEx.addressService.service.clinicawebservice.com/TprovinceService/searchProvinceByIdRequest", output = "http://AddressEx.addressService.service.clinicawebservice.com/TprovinceService/searchProvinceByIdResponse")
-    public TprovinceDto searchProvinceById(
+    @RequestWrapper(localName = "insertProvince", targetNamespace = "http://AddressEx.addressService.service.clinicawebservice.com/", className = "service.InsertProvince")
+    @ResponseWrapper(localName = "insertProvinceResponse", targetNamespace = "http://AddressEx.addressService.service.clinicawebservice.com/", className = "service.InsertProvinceResponse")
+    @Action(input = "http://AddressEx.addressService.service.clinicawebservice.com/TprovinceService/insertProvinceRequest", output = "http://AddressEx.addressService.service.clinicawebservice.com/TprovinceService/insertProvinceResponse")
+    public boolean insertProvince(
         @WebParam(name = "arg0", targetNamespace = "")
         TprovinceDto arg0);
 
@@ -59,14 +59,14 @@ public interface TprovinceService {
      * 
      * @param arg0
      * @return
-     *     returns boolean
+     *     returns service.TprovinceDto
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "updateProvince", targetNamespace = "http://AddressEx.addressService.service.clinicawebservice.com/", className = "service.UpdateProvince")
-    @ResponseWrapper(localName = "updateProvinceResponse", targetNamespace = "http://AddressEx.addressService.service.clinicawebservice.com/", className = "service.UpdateProvinceResponse")
-    @Action(input = "http://AddressEx.addressService.service.clinicawebservice.com/TprovinceService/updateProvinceRequest", output = "http://AddressEx.addressService.service.clinicawebservice.com/TprovinceService/updateProvinceResponse")
-    public boolean updateProvince(
+    @RequestWrapper(localName = "searchProvinceById", targetNamespace = "http://AddressEx.addressService.service.clinicawebservice.com/", className = "service.SearchProvinceById")
+    @ResponseWrapper(localName = "searchProvinceByIdResponse", targetNamespace = "http://AddressEx.addressService.service.clinicawebservice.com/", className = "service.SearchProvinceByIdResponse")
+    @Action(input = "http://AddressEx.addressService.service.clinicawebservice.com/TprovinceService/searchProvinceByIdRequest", output = "http://AddressEx.addressService.service.clinicawebservice.com/TprovinceService/searchProvinceByIdResponse")
+    public TprovinceDto searchProvinceById(
         @WebParam(name = "arg0", targetNamespace = "")
         TprovinceDto arg0);
 
@@ -90,10 +90,10 @@ public interface TprovinceService {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "insertProvince", targetNamespace = "http://AddressEx.addressService.service.clinicawebservice.com/", className = "service.InsertProvince")
-    @ResponseWrapper(localName = "insertProvinceResponse", targetNamespace = "http://AddressEx.addressService.service.clinicawebservice.com/", className = "service.InsertProvinceResponse")
-    @Action(input = "http://AddressEx.addressService.service.clinicawebservice.com/TprovinceService/insertProvinceRequest", output = "http://AddressEx.addressService.service.clinicawebservice.com/TprovinceService/insertProvinceResponse")
-    public boolean insertProvince(
+    @RequestWrapper(localName = "updateProvince", targetNamespace = "http://AddressEx.addressService.service.clinicawebservice.com/", className = "service.UpdateProvince")
+    @ResponseWrapper(localName = "updateProvinceResponse", targetNamespace = "http://AddressEx.addressService.service.clinicawebservice.com/", className = "service.UpdateProvinceResponse")
+    @Action(input = "http://AddressEx.addressService.service.clinicawebservice.com/TprovinceService/updateProvinceRequest", output = "http://AddressEx.addressService.service.clinicawebservice.com/TprovinceService/updateProvinceResponse")
+    public boolean updateProvince(
         @WebParam(name = "arg0", targetNamespace = "")
         TprovinceDto arg0);
 

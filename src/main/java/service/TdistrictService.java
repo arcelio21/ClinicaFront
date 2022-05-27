@@ -33,6 +33,21 @@ public interface TdistrictService {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "updateDistrict", targetNamespace = "http://AddressEx.addressService.service.clinicawebservice.com/", className = "service.UpdateDistrict")
+    @ResponseWrapper(localName = "updateDistrictResponse", targetNamespace = "http://AddressEx.addressService.service.clinicawebservice.com/", className = "service.UpdateDistrictResponse")
+    @Action(input = "http://AddressEx.addressService.service.clinicawebservice.com/TdistrictService/updateDistrictRequest", output = "http://AddressEx.addressService.service.clinicawebservice.com/TdistrictService/updateDistrictResponse")
+    public boolean updateDistrict(
+        @WebParam(name = "arg0", targetNamespace = "")
+        TdistrictDto arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
     @RequestWrapper(localName = "insertDistrict", targetNamespace = "http://AddressEx.addressService.service.clinicawebservice.com/", className = "service.InsertDistrict")
     @ResponseWrapper(localName = "insertDistrictResponse", targetNamespace = "http://AddressEx.addressService.service.clinicawebservice.com/", className = "service.InsertDistrictResponse")
     @Action(input = "http://AddressEx.addressService.service.clinicawebservice.com/TdistrictService/insertDistrictRequest", output = "http://AddressEx.addressService.service.clinicawebservice.com/TdistrictService/insertDistrictResponse")
@@ -57,6 +72,18 @@ public interface TdistrictService {
 
     /**
      * 
+     * @return
+     *     returns java.util.List<service.TdistrictDto>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "listDistricts", targetNamespace = "http://AddressEx.addressService.service.clinicawebservice.com/", className = "service.ListDistricts")
+    @ResponseWrapper(localName = "listDistrictsResponse", targetNamespace = "http://AddressEx.addressService.service.clinicawebservice.com/", className = "service.ListDistrictsResponse")
+    @Action(input = "http://AddressEx.addressService.service.clinicawebservice.com/TdistrictService/listDistrictsRequest", output = "http://AddressEx.addressService.service.clinicawebservice.com/TdistrictService/listDistrictsResponse")
+    public List<TdistrictDto> listDistricts();
+
+    /**
+     * 
      * @param arg0
      * @return
      *     returns service.TdistrictDto
@@ -69,32 +96,5 @@ public interface TdistrictService {
     public TdistrictDto searchDistrictById(
         @WebParam(name = "arg0", targetNamespace = "")
         TdistrictDto arg0);
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns boolean
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "updateDistrict", targetNamespace = "http://AddressEx.addressService.service.clinicawebservice.com/", className = "service.UpdateDistrict")
-    @ResponseWrapper(localName = "updateDistrictResponse", targetNamespace = "http://AddressEx.addressService.service.clinicawebservice.com/", className = "service.UpdateDistrictResponse")
-    @Action(input = "http://AddressEx.addressService.service.clinicawebservice.com/TdistrictService/updateDistrictRequest", output = "http://AddressEx.addressService.service.clinicawebservice.com/TdistrictService/updateDistrictResponse")
-    public boolean updateDistrict(
-        @WebParam(name = "arg0", targetNamespace = "")
-        TdistrictDto arg0);
-
-    /**
-     * 
-     * @return
-     *     returns java.util.List<service.TdistrictDto>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "listDistricts", targetNamespace = "http://AddressEx.addressService.service.clinicawebservice.com/", className = "service.ListDistricts")
-    @ResponseWrapper(localName = "listDistrictsResponse", targetNamespace = "http://AddressEx.addressService.service.clinicawebservice.com/", className = "service.ListDistrictsResponse")
-    @Action(input = "http://AddressEx.addressService.service.clinicawebservice.com/TdistrictService/listDistrictsRequest", output = "http://AddressEx.addressService.service.clinicawebservice.com/TdistrictService/listDistrictsResponse")
-    public List<TdistrictDto> listDistricts();
 
 }

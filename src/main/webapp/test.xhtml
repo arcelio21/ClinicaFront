@@ -1,0 +1,278 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Listar de usuarios</title>
+    <link rel="stylesheet" type="text/css" href="../../resources/css/templateAdmin.css" />
+    <link rel="stylesheet" type="text/css" href="../../resources/css/Administrador/ListUser/listUser.css" />
+
+</head>
+
+<body>
+<div id="container">
+
+
+
+    <header>
+        <h1>Clinica UTP</h1>
+
+
+    </header>
+    <nav>
+        <h2>Administrador</h2>
+
+    </nav>
+
+    <aside><head id="j_idt8"><link type="text/css" rel="stylesheet" href="/ClinicaCliente-1.0-SNAPSHOT/faces/javax.faces.resource/theme.css?ln=primefaces-saga&amp;v=11.0.0" /><link type="text/css" rel="stylesheet" href="/ClinicaCliente-1.0-SNAPSHOT/faces/javax.faces.resource/primeicons/primeicons.css?ln=primefaces&amp;v=11.0.0" /><link type="text/css" rel="stylesheet" href="/ClinicaCliente-1.0-SNAPSHOT/faces/javax.faces.resource/refAdmin.css?ln=css" /><link type="text/css" rel="stylesheet" href="/ClinicaCliente-1.0-SNAPSHOT/faces/javax.faces.resource/components.css?ln=primefaces&amp;v=11.0.0" /><script type="text/javascript" src="/ClinicaCliente-1.0-SNAPSHOT/faces/javax.faces.resource/jquery/jquery.js?ln=primefaces&amp;v=11.0.0"></script><script type="text/javascript" src="/ClinicaCliente-1.0-SNAPSHOT/faces/javax.faces.resource/jquery/jquery-plugins.js?ln=primefaces&amp;v=11.0.0"></script><script type="text/javascript" src="/ClinicaCliente-1.0-SNAPSHOT/faces/javax.faces.resource/core.js?ln=primefaces&amp;v=11.0.0"></script><script type="text/javascript" src="/ClinicaCliente-1.0-SNAPSHOT/faces/javax.faces.resource/components.js?ln=primefaces&amp;v=11.0.0"></script><script type="text/javascript">if(window.PrimeFaces){PrimeFaces.settings.locale='es_ES';PrimeFaces.settings.viewId='/Administrador/ListUser/RegisterUser.xhtml';PrimeFaces.settings.contextPath='/ClinicaCliente-1.0-SNAPSHOT';PrimeFaces.settings.cookiesSecure=false;}</script></head>
+        <h3>Lista de opciones</h3>
+        <ul>
+
+            <li>
+                <form id="j_idt11" name="j_idt11" method="post" action="/ClinicaCliente-1.0-SNAPSHOT/faces/Administrador/ListUser/RegisterUser.xhtml" enctype="application/x-www-form-urlencoded">
+                    <input type="hidden" name="j_idt11" value="j_idt11" />
+                    <script type="text/javascript" src="/ClinicaCliente-1.0-SNAPSHOT/faces/javax.faces.resource/jsf.js?ln=javax.faces"></script><a href="#" onclick="mojarra.jsfcljs(document.getElementById('j_idt11'),{'j_idt11:j_idt12':'j_idt11:j_idt12'},'');return false" class="options">Listar usuarios</a><input type="hidden" name="javax.faces.ViewState" id="j_id1:javax.faces.ViewState:0" value="1207490191294001079:-1628608144755595760" autocomplete="off" />
+                </form></li>
+            <li><a href="/ClinicaCliente-1.0-SNAPSHOT/faces/index.xhtml" class="options">Cerrar sesión</a></li>
+
+
+
+        </ul>
+
+    </aside>
+
+    <article>
+
+        <!--BOTON PARA AGREGAR NUEVO USUARIO-->
+        <div id="optionsData"><button id="j_idt18" name="j_idt18" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="PrimeFaces.ab({s:&quot;j_idt18&quot;,u:&quot;addUserFormDlg&quot;,onco:function(xhr,status,args,data){PF('addUserDialog').show();;}});return false;" type="submit"><span class="ui-button-text ui-c">Agregar usuario</span></button><script id="j_idt18_s" type="text/javascript">$(function(){PrimeFaces.cw("CommandButton","widget_j_idt18",{id:"j_idt18"});});</script>
+
+
+        </div>
+        <div id="datos_table"><table id="user_Data" class="table_user" border="1">
+            <thead>
+            <tr>
+                <th scope="col">Editar</th>
+                <th scope="col">Cedula</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Direccion</th>
+                <th scope="col">E-mail</th>
+                <th scope="col">Contacto</th>
+                <th scope="col">Eliminar</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><a id="user_Data:0:j_idt23" href="#" class="ui-commandlink ui-widget" onclick="PF('editUserDialog').initPosition();;PrimeFaces.ab({s:&quot;user_Data:0:j_idt23&quot;,u:&quot;editUserFormDlg&quot;,onco:function(xhr,status,args,data){PF('editUserDialog').show();;}});return false;">
+                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M2 17V20H10V18.11H3.9V17C3.9 16.36 7.03 14.9 10 14.9C10.96 14.91 11.91 15.04 12.83 15.28L14.35 13.76C12.95 13.29 11.5 13.03 10 13C7.33 13 2 14.33 2 17M10 4C7.79 4 6 5.79 6 8S7.79 12 10 12 14 10.21 14 8 12.21 4 10 4M10 10C8.9 10 8 9.11 8 8S8.9 6 10 6 12 6.9 12 8 11.11 10 10 10M21.7 13.35L20.7 14.35L18.65 12.35L19.65 11.35C19.86 11.14 20.21 11.14 20.42 11.35L21.7 12.63C21.91 12.84 21.91 13.19 21.7 13.4M12 18.94L18.06 12.88L20.11 14.88L14.11 20.95H12V18.94"></path>
+                    </svg></a></td>
+                <td>
+                    12-704-1435
+                </td>
+                <td>
+                    ARCELIO<!--HAY QUE AGREGAR EL GET DEL ARRAY EN EL BEAN, PARA ACCEDER A LOS VALORES DE LOS OBJS DENTRO DE LIST--></td>
+                <td>
+                    MONTEZUMA
+                </td>
+                <td>
+
+                </td>
+                <td>
+                    arceliomonte15@gmail.com
+                </td>
+                <td>
+                    65349162
+                </td>
+                <td><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user-x">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="8.5" cy="7" r="4"></circle>
+                    <line x1="18" y1="8" x2="23" y2="13"></line>
+                    <line x1="23" y1="8" x2="18" y2="13"></line>
+                </svg></td>
+            </tr>
+            <tr>
+                <td><a id="user_Data:1:j_idt23" href="#" class="ui-commandlink ui-widget" onclick="PF('editUserDialog').initPosition();;PrimeFaces.ab({s:&quot;user_Data:1:j_idt23&quot;,u:&quot;editUserFormDlg&quot;,onco:function(xhr,status,args,data){PF('editUserDialog').show();;}});return false;">
+                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M2 17V20H10V18.11H3.9V17C3.9 16.36 7.03 14.9 10 14.9C10.96 14.91 11.91 15.04 12.83 15.28L14.35 13.76C12.95 13.29 11.5 13.03 10 13C7.33 13 2 14.33 2 17M10 4C7.79 4 6 5.79 6 8S7.79 12 10 12 14 10.21 14 8 12.21 4 10 4M10 10C8.9 10 8 9.11 8 8S8.9 6 10 6 12 6.9 12 8 11.11 10 10 10M21.7 13.35L20.7 14.35L18.65 12.35L19.65 11.35C19.86 11.14 20.21 11.14 20.42 11.35L21.7 12.63C21.91 12.84 21.91 13.19 21.7 13.4M12 18.94L18.06 12.88L20.11 14.88L14.11 20.95H12V18.94"></path>
+                    </svg></a></td>
+                <td>
+                    4-485-1324
+                </td>
+                <td>
+                    Rosa<!--HAY QUE AGREGAR EL GET DEL ARRAY EN EL BEAN, PARA ACCEDER A LOS VALORES DE LOS OBJS DENTRO DE LIST--></td>
+                <td>
+                    Montezuma
+                </td>
+                <td>
+
+                </td>
+                <td>
+                    rosamonte12@gmai.com
+                </td>
+                <td>
+                    65444722
+                </td>
+                <td><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user-x">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="8.5" cy="7" r="4"></circle>
+                    <line x1="18" y1="8" x2="23" y2="13"></line>
+                    <line x1="23" y1="8" x2="18" y2="13"></line>
+                </svg></td>
+            </tr>
+            <tr>
+                <td><a id="user_Data:2:j_idt23" href="#" class="ui-commandlink ui-widget" onclick="PF('editUserDialog').initPosition();;PrimeFaces.ab({s:&quot;user_Data:2:j_idt23&quot;,u:&quot;editUserFormDlg&quot;,onco:function(xhr,status,args,data){PF('editUserDialog').show();;}});return false;">
+                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M2 17V20H10V18.11H3.9V17C3.9 16.36 7.03 14.9 10 14.9C10.96 14.91 11.91 15.04 12.83 15.28L14.35 13.76C12.95 13.29 11.5 13.03 10 13C7.33 13 2 14.33 2 17M10 4C7.79 4 6 5.79 6 8S7.79 12 10 12 14 10.21 14 8 12.21 4 10 4M10 10C8.9 10 8 9.11 8 8S8.9 6 10 6 12 6.9 12 8 11.11 10 10 10M21.7 13.35L20.7 14.35L18.65 12.35L19.65 11.35C19.86 11.14 20.21 11.14 20.42 11.35L21.7 12.63C21.91 12.84 21.91 13.19 21.7 13.4M12 18.94L18.06 12.88L20.11 14.88L14.11 20.95H12V18.94"></path>
+                    </svg></a></td>
+                <td>
+                    1-423-345
+                </td>
+                <td>
+                    Carlos<!--HAY QUE AGREGAR EL GET DEL ARRAY EN EL BEAN, PARA ACCEDER A LOS VALORES DE LOS OBJS DENTRO DE LIST--></td>
+                <td>
+                    Mendez
+                </td>
+                <td>
+
+                </td>
+                <td>
+                    carmontez@gmail.com
+                </td>
+                <td>
+                    67349123
+                </td>
+                <td><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user-x">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="8.5" cy="7" r="4"></circle>
+                    <line x1="18" y1="8" x2="23" y2="13"></line>
+                    <line x1="23" y1="8" x2="18" y2="13"></line>
+                </svg></td>
+            </tr>
+            <tr>
+                <td><a id="user_Data:3:j_idt23" href="#" class="ui-commandlink ui-widget" onclick="PF('editUserDialog').initPosition();;PrimeFaces.ab({s:&quot;user_Data:3:j_idt23&quot;,u:&quot;editUserFormDlg&quot;,onco:function(xhr,status,args,data){PF('editUserDialog').show();;}});return false;">
+                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M2 17V20H10V18.11H3.9V17C3.9 16.36 7.03 14.9 10 14.9C10.96 14.91 11.91 15.04 12.83 15.28L14.35 13.76C12.95 13.29 11.5 13.03 10 13C7.33 13 2 14.33 2 17M10 4C7.79 4 6 5.79 6 8S7.79 12 10 12 14 10.21 14 8 12.21 4 10 4M10 10C8.9 10 8 9.11 8 8S8.9 6 10 6 12 6.9 12 8 11.11 10 10 10M21.7 13.35L20.7 14.35L18.65 12.35L19.65 11.35C19.86 11.14 20.21 11.14 20.42 11.35L21.7 12.63C21.91 12.84 21.91 13.19 21.7 13.4M12 18.94L18.06 12.88L20.11 14.88L14.11 20.95H12V18.94"></path>
+                    </svg></a></td>
+                <td>
+                    3-234-2356
+                </td>
+                <td>
+                    Carmen<!--HAY QUE AGREGAR EL GET DEL ARRAY EN EL BEAN, PARA ACCEDER A LOS VALORES DE LOS OBJS DENTRO DE LIST--></td>
+                <td>
+                    Gonzales
+                </td>
+                <td>
+
+                </td>
+                <td>
+                    carmegonza@gmai.com
+                </td>
+                <td>
+                    67345123
+                </td>
+                <td><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user-x">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="8.5" cy="7" r="4"></circle>
+                    <line x1="18" y1="8" x2="23" y2="13"></line>
+                    <line x1="23" y1="8" x2="18" y2="13"></line>
+                </svg></td>
+            </tr>
+            <tr>
+                <td><a id="user_Data:4:j_idt23" href="#" class="ui-commandlink ui-widget" onclick="PF('editUserDialog').initPosition();;PrimeFaces.ab({s:&quot;user_Data:4:j_idt23&quot;,u:&quot;editUserFormDlg&quot;,onco:function(xhr,status,args,data){PF('editUserDialog').show();;}});return false;">
+                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M2 17V20H10V18.11H3.9V17C3.9 16.36 7.03 14.9 10 14.9C10.96 14.91 11.91 15.04 12.83 15.28L14.35 13.76C12.95 13.29 11.5 13.03 10 13C7.33 13 2 14.33 2 17M10 4C7.79 4 6 5.79 6 8S7.79 12 10 12 14 10.21 14 8 12.21 4 10 4M10 10C8.9 10 8 9.11 8 8S8.9 6 10 6 12 6.9 12 8 11.11 10 10 10M21.7 13.35L20.7 14.35L18.65 12.35L19.65 11.35C19.86 11.14 20.21 11.14 20.42 11.35L21.7 12.63C21.91 12.84 21.91 13.19 21.7 13.4M12 18.94L18.06 12.88L20.11 14.88L14.11 20.95H12V18.94"></path>
+                    </svg></a></td>
+                <td>
+                    1-234-456
+                </td>
+                <td>
+                    Carolina<!--HAY QUE AGREGAR EL GET DEL ARRAY EN EL BEAN, PARA ACCEDER A LOS VALORES DE LOS OBJS DENTRO DE LIST--></td>
+                <td>
+                    Muñoz
+                </td>
+                <td>
+
+                </td>
+                <td>
+                    caromuno@gmail.com
+                </td>
+                <td>
+                    67342123
+                </td>
+                <td><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user-x">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="8.5" cy="7" r="4"></circle>
+                    <line x1="18" y1="8" x2="23" y2="13"></line>
+                    <line x1="23" y1="8" x2="18" y2="13"></line>
+                </svg></td>
+            </tr>
+            <tr>
+                <td><a id="user_Data:5:j_idt23" href="#" class="ui-commandlink ui-widget" onclick="PF('editUserDialog').initPosition();;PrimeFaces.ab({s:&quot;user_Data:5:j_idt23&quot;,u:&quot;editUserFormDlg&quot;,onco:function(xhr,status,args,data){PF('editUserDialog').show();;}});return false;">
+                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M2 17V20H10V18.11H3.9V17C3.9 16.36 7.03 14.9 10 14.9C10.96 14.91 11.91 15.04 12.83 15.28L14.35 13.76C12.95 13.29 11.5 13.03 10 13C7.33 13 2 14.33 2 17M10 4C7.79 4 6 5.79 6 8S7.79 12 10 12 14 10.21 14 8 12.21 4 10 4M10 10C8.9 10 8 9.11 8 8S8.9 6 10 6 12 6.9 12 8 11.11 10 10 10M21.7 13.35L20.7 14.35L18.65 12.35L19.65 11.35C19.86 11.14 20.21 11.14 20.42 11.35L21.7 12.63C21.91 12.84 21.91 13.19 21.7 13.4M12 18.94L18.06 12.88L20.11 14.88L14.11 20.95H12V18.94"></path>
+                    </svg></a></td>
+                <td>
+                    8-234-1234
+                </td>
+                <td>
+                    Juan<!--HAY QUE AGREGAR EL GET DEL ARRAY EN EL BEAN, PARA ACCEDER A LOS VALORES DE LOS OBJS DENTRO DE LIST--></td>
+                <td>
+                    Montenegro
+                </td>
+                <td>
+
+                </td>
+                <td>
+                    juanmonte@gmail.com
+                </td>
+                <td>
+                    6723141
+                </td>
+                <td><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user-x">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="8.5" cy="7" r="4"></circle>
+                    <line x1="18" y1="8" x2="23" y2="13"></line>
+                    <line x1="23" y1="8" x2="18" y2="13"></line>
+                </svg></td>
+            </tr>
+            </tbody>
+        </table>
+
+
+            <!--SE INCLUYE EL ARCHIVO DE LA VENTANA MODAL PARA EDITAR USUARIO-->
+            <!--VENTAN PARA EDITAR USUARIOS--><div id="editUserDlg" class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-shadow ui-hidden-container"><div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top"><span id="editUserDlg_title" class="ui-dialog-title">Editar usuario</span><a href="#" class="ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all" aria-label="Cerrar"><span class="ui-icon ui-icon-closethick"></span></a></div><div class="ui-dialog-content ui-widget-content" id="editUserDlg_content">
+                <!--widgetVar: para poder referecniar el elemento(nombre), modal: para que se muestre encima de la pag HTML,
+                           showEfect &amp; hideEfecte: para que se oculte y muestre paulatinamente el dialog; rizable: para que no se pueda reajustar el tama&ntilde;o del dialog -->
+
+                <!--FORMULARIO PARA ACTUALIZAR USUARIO-->
+                <form id="editUserFormDlg" name="editUserFormDlg" method="post" action="/ClinicaCliente-1.0-SNAPSHOT/faces/Administrador/ListUser/RegisterUser.xhtml" enctype="application/x-www-form-urlencoded">
+                    <input type="hidden" name="editUserFormDlg" value="editUserFormDlg" />
+                    <div id="editUserFormDlg:userDetail" class="ui-outputpanel ui-widget"><table id="editUserFormDlg:display" class="ui-panelgrid ui-widget" role="grid"><tfoot class="ui-panelgrid-footer"><tr class="ui-widget-header" role="row"><td colspan="4" role="columnheader" class="ui-panelgrid-cell ui-widget-header">
+                        <!--update: para que se actualice la tabla de datos; oncomplete: se oculta el panel de dialogo--><button id="editUserFormDlg:j_idt72" name="editUserFormDlg:j_idt72" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="PrimeFaces.ab({s:&quot;editUserFormDlg:j_idt72&quot;,f:&quot;editUserFormDlg&quot;,u:&quot;editUserFormDlg:display user_Data&quot;,onco:function(xhr,status,args,data){PF('editUserDialog').hide();;}});return false;" type="submit"><span class="ui-button-text ui-c">Guardar cambios</span></button><script id="editUserFormDlg:j_idt72_s" type="text/javascript">$(function(){PrimeFaces.cw("CommandButton","widget_editUserFormDlg_j_idt72",{id:"editUserFormDlg:j_idt72"});});</script></td></tr></tfoot><tbody><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell label">Cedula</td><td role="gridcell" class="ui-panelgrid-cell value"><input type="text" name="editUserFormDlg:j_idt57" readonly="readonly" /></td><td role="gridcell" class="ui-panelgrid-cell">Nombre</td><td role="gridcell" class="ui-panelgrid-cell"><input type="text" name="editUserFormDlg:j_idt59" /></td></tr><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell label">Apellido</td><td role="gridcell" class="ui-panelgrid-cell value"><input type="text" name="editUserFormDlg:j_idt61" /></td><td role="gridcell" class="ui-panelgrid-cell">Contacto</td><td role="gridcell" class="ui-panelgrid-cell"><input type="text" name="editUserFormDlg:j_idt63" /></td></tr><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell label">E-mail</td><td role="gridcell" class="ui-panelgrid-cell value"><input type="text" name="editUserFormDlg:j_idt65" /></td><td role="gridcell" class="ui-panelgrid-cell">Contraseña</td><td role="gridcell" class="ui-panelgrid-cell"><input type="password" name="editUserFormDlg:j_idt67" value="" /></td></tr><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell label">Direccion</td><td role="gridcell" class="ui-panelgrid-cell value"><input type="text" name="editUserFormDlg:j_idt69" /></td><td role="gridcell" class="ui-panelgrid-cell">Fecha de creacion</td><td role="gridcell" class="ui-panelgrid-cell"><input type="text" name="editUserFormDlg:j_idt71" /></td></tr></tbody></table></div><input type="hidden" name="javax.faces.ViewState" id="j_id1:javax.faces.ViewState:1" value="1207490191294001079:-1628608144755595760" autocomplete="off" />
+                </form></div></div><script id="editUserDlg_s" type="text/javascript">$(function(){PrimeFaces.cw("Dialog","editUserDialog",{id:"editUserDlg",resizable:false,modal:true,showEffect:"fade",hideEffect:"fade"});});</script>
+            <!--SE INCLUYE EL ARCHIVO DE LA VENTANA MODAL PARA AGREGAR USUARIO-->
+            <!--VENTANA MODAL PARA AGREGAR PERSONA--><div id="userAddDlg" class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-shadow ui-hidden-container"><div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top"><span id="userAddDlg_title" class="ui-dialog-title">Agregar nuevo usuario</span><a href="#" class="ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all" aria-label="Cerrar"><span class="ui-icon ui-icon-closethick"></span></a></div><div class="ui-dialog-content ui-widget-content" id="userAddDlg_content">
+                <!--widgetVar: para poder referecniar el elemento(nombre), modal: para que se muestre encima de la pag HTML,
+                           showEfect &amp; hideEfecte: para que se oculte y muestre paulatinamente el dialog; rizable: para que no se pueda reajustar el tama&ntilde;o del dialog -->
+
+                <!--FORMULARIO DE ADD_USER-->
+                <form id="addUserFormDlg" name="addUserFormDlg" method="post" action="/ClinicaCliente-1.0-SNAPSHOT/faces/Administrador/ListUser/RegisterUser.xhtml" enctype="application/x-www-form-urlencoded">
+                    <input type="hidden" name="addUserFormDlg" value="addUserFormDlg" />
+                    <div id="addUserFormDlg:userEditDetail" class="ui-outputpanel ui-widget"><table id="addUserFormDlg:display" class="ui-panelgrid ui-widget" role="grid"><tfoot class="ui-panelgrid-footer"><tr class="ui-widget-header" role="row"><td colspan="4" role="columnheader" class="ui-panelgrid-cell ui-widget-header">
+                        <!--update: para que se actualice la tabla de datos; oncomplete: se oculta el panel de dialogo--><button id="addUserFormDlg:j_idt89" name="addUserFormDlg:j_idt89" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="PrimeFaces.ab({s:&quot;addUserFormDlg:j_idt89&quot;,f:&quot;addUserFormDlg&quot;,u:&quot;addUserFormDlg:display user_Data&quot;,onco:function(xhr,status,args,data){PF('addUserDialog').hide();;}});return false;" type="submit"><span class="ui-button-text ui-c">Guardar</span></button><script id="addUserFormDlg:j_idt89_s" type="text/javascript">$(function(){PrimeFaces.cw("CommandButton","widget_addUserFormDlg_j_idt89",{id:"addUserFormDlg:j_idt89"});});</script></td></tr></tfoot><tbody><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell label">Cedula</td><td role="gridcell" class="ui-panelgrid-cell value"><input type="text" name="addUserFormDlg:j_idt78" /></td><td role="gridcell" class="ui-panelgrid-cell">Nombre</td><td role="gridcell" class="ui-panelgrid-cell"><input type="text" name="addUserFormDlg:j_idt80" /></td></tr><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell label">Apellido</td><td role="gridcell" class="ui-panelgrid-cell value"><input type="text" name="addUserFormDlg:j_idt82" /></td><td role="gridcell" class="ui-panelgrid-cell">Contacto</td><td role="gridcell" class="ui-panelgrid-cell"><input type="text" name="addUserFormDlg:j_idt84" placeholder="Numero de telefono" /></td></tr><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell label">E-mail</td><td role="gridcell" class="ui-panelgrid-cell value"><input type="text" name="addUserFormDlg:j_idt86" /></td><td role="gridcell" class="ui-panelgrid-cell">Contraseña</td><td role="gridcell" class="ui-panelgrid-cell"><input type="password" name="addUserFormDlg:j_idt88" value="" /></td></tr></tbody></table></div><input type="hidden" name="javax.faces.ViewState" id="j_id1:javax.faces.ViewState:2" value="1207490191294001079:-1628608144755595760" autocomplete="off" />
+                </form></div></div><script id="userAddDlg_s" type="text/javascript">$(function(){PrimeFaces.cw("Dialog","addUserDialog",{id:"userAddDlg",resizable:false,modal:true,showEffect:"fade",hideEffect:"fade"});});</script>
+
+
+
+
+        </div>
+    </article>
+
+    <footer>
+        <h2>Autor: Arcelio Montezuma</h2>
+        <h2>Copyright © 2022</h2>
+    </footer>
+</div>
+</body>
+</html>

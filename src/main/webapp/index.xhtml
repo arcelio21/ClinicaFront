@@ -5,88 +5,57 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
-        xmlns:p="http://primefaces.org/ui">
+        >
 
 <ui:composition template="WEB-INF/Template.xhtml">
     <ui:define name="head">
         <title>Inicio de sesi&oacute;n</title>
         <h:outputStylesheet library="css" name="index.css" />
+        <f:event listener="#{index.cleanValue}" type="preRenderView"></f:event><!--PARA QUE ELIMINE CUALQUEIR VALOR QUE
+        TENGA EL OBJETO QUE VALIDA USUARIO AL CARGAR EL INICIO POR PRIMERA VEZ O CERRAR SESSION-->
+    </ui:define>
+    <ui:define name="headerTemp">
+        <h1 id="bienvenido">Clinica UTP</h1>
+        <h2>Gestion de citas y consultas</h2>
     </ui:define>
     <ui:define name="contentemp">
 
 
-        <h1>Bienvenido</h1>
-        <h2>Inicio de sesi&oacute;n</h2>
+
+
 
         <div id="logIn">
-            <h:form id="formLogin">
-                <table border="1">
-                    <tbody>
-                    <tr>
-                        <td><h:outputText value="Cedula"/></td>
-                        <td>
-                            <h:inputText id="cedula" value="#{usuarioValidacion.user}">
-                                <f:passThroughAttribute name="placeholder" value="Ingrese cedula"></f:passThroughAttribute>
-                            </h:inputText>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><h:outputText value="Contraseña"/></td>
-                        <td>
-                            <h:inputSecret id="pass" value="#{usuarioValidacion.pass}">
-                                <f:passThroughAttribute name="placeholder" value="Ingrese contraseña"></f:passThroughAttribute>
-                            </h:inputSecret>
-                        </td>
-                    </tr>
-                    </tbody>
-                    <tfoot>
-                    <tr>
-                        <td colspan="2" ><h:commandButton value="Ingresar" action="#{index.validarUser()}"/></td>
-                    </tr>
-                    </tfoot>
-                </table>
+            <!--FORMULARIO DE INICIO DE SESION-->
+            <h:form id="formLogin" >
+                <div id="imgSession">
+                    <h:graphicImage styleClass="imgSession__img" library="image" name="sessionPng.png" />
+                </div>
+
+                <!--CEDULA-->
+                <h:inputText styleClass="cedula" value="#{usuarioValidacion.idenCard}" >
+                    <f:passThroughAttribute name="placeholder" value="Ingrese cedula"></f:passThroughAttribute>
+                </h:inputText>
+
+                <!--CONTRASEÑA-->
+                <h:inputSecret styleClass="pass" value="#{usuarioValidacion.pass}">
+                    <f:passThroughAttribute name="placeholder" value="Ingrese contraseña"></f:passThroughAttribute>
+                </h:inputSecret>
+
+                <!--OPCIONES -->
+                <div id="opciones" >
+                    <h:outputLabel styleClass="pasSRemenber" ><h:selectBooleanCheckbox value="false" styleClass="check__pasRemenber" />    Recordar contraseña</h:outputLabel>  <h:link styleClass="linkForgetPass" value="Olvide contraseña" outcome="/forgotPass/forgotPass.xhtml"/>
+
+                </div>
+
+                <!--BOTON DE INICIO-->
+                <h:commandButton styleClass="btnLogin" value="Ingresar" action="#{index.validarUser()}"/>
+
             </h:form>
+            <!--TERMINA FORMULARIO DE INICIO DE SESION-->
         </div>
 
 
     </ui:define>
 </ui:composition>
-    <!--<h:head>
-        <title>Inicio</title>
-    </h:head>
-
-    <h:body>
-        <h1>Bienvenido</h1>
-        <h2>Inicio de sesi&oacute;n</h2>
-        <h:form id="formLogin">
-            <table border="1">
-                <tbody>
-                    <tr>
-                        <td><h:outputText value="Cedula"/></td>
-                        <td>
-                            <h:inputText id="cedula" value="#{usuarioValidacion.user}">
-                                <f:passThroughAttribute name="placeholder" value="Ingrese cedula"></f:passThroughAttribute>
-                            </h:inputText>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><h:outputText value="Contraseña"/></td>
-                        <td>
-                            <h:inputSecret id="pass" value="#{usuarioValidacion.pass}">
-                                <f:passThroughAttribute name="placeholder" value="Ingrese contraseña"></f:passThroughAttribute>
-                            </h:inputSecret>
-                        </td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td colspan="2" ><h:commandButton value="Ingresar" action="#{index.validarUser()}"/></td>
-                    </tr>
-                </tfoot>
-            </table>
-        </h:form>
-
-    </h:body>
--->
 
 </html>
