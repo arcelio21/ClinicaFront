@@ -1,9 +1,11 @@
+C:\Users\arcel\IdeaProjects\ClinicaCliente\src\main\java\com\clinicacliente\controller\administrador\address\Provinces.java
 C:\Users\arcel\IdeaProjects\ClinicaCliente\src\main\java\com\clinicacliente\lifecicle\DebuggerListener.java
 C:\Users\arcel\IdeaProjects\ClinicaCliente\src\main\java\service\InsertTypeUser.java
 C:\Users\arcel\IdeaProjects\ClinicaCliente\src\main\java\service\ListDistricts.java
 C:\Users\arcel\IdeaProjects\ClinicaCliente\src\main\java\service\TdistrictService.java
 C:\Users\arcel\IdeaProjects\ClinicaCliente\src\main\java\service\SEARCHSTATUS.java
 C:\Users\arcel\IdeaProjects\ClinicaCliente\src\main\java\service\DeleteTypeUserResponse.java
+C:\Users\arcel\IdeaProjects\ClinicaCliente\src\main\java\service\DeleteVillageResponse.java
 C:\Users\arcel\IdeaProjects\ClinicaCliente\src\main\java\service\SearchAddressById.java
 C:\Users\arcel\IdeaProjects\ClinicaCliente\src\main\java\service\SearchDistrictById.java
 C:\Users\arcel\IdeaProjects\ClinicaCliente\src\main\java\service\DeleteAddress.java
@@ -81,6 +83,7 @@ C:\Users\arcel\IdeaProjects\ClinicaCliente\src\main\java\service\DeleteTypeUser.
 C:\Users\arcel\IdeaProjects\ClinicaCliente\src\main\java\service\ListVillagesResponse.java
 C:\Users\arcel\IdeaProjects\ClinicaCliente\src\main\java\service\LISTUSERTYPEREGSResponse.java
 C:\Users\arcel\IdeaProjects\ClinicaCliente\src\main\java\service\SEARCHSTATUSResponse.java
+C:\Users\arcel\IdeaProjects\ClinicaCliente\src\main\java\service\DeleteVillage.java
 C:\Users\arcel\IdeaProjects\ClinicaCliente\src\main\java\service\InsertAddressResponse.java
 C:\Users\arcel\IdeaProjects\ClinicaCliente\src\main\java\service\UpdateDistrict.java
 C:\Users\arcel\IdeaProjects\ClinicaCliente\src\main\java\service\UpdateVillage.java

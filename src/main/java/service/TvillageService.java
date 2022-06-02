@@ -33,39 +33,12 @@ public interface TvillageService {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "updateVillage", targetNamespace = "http://AddressEx.addressService.service.clinicawebservice.com/", className = "service.UpdateVillage")
-    @ResponseWrapper(localName = "updateVillageResponse", targetNamespace = "http://AddressEx.addressService.service.clinicawebservice.com/", className = "service.UpdateVillageResponse")
-    @Action(input = "http://AddressEx.addressService.service.clinicawebservice.com/TvillageService/updateVillageRequest", output = "http://AddressEx.addressService.service.clinicawebservice.com/TvillageService/updateVillageResponse")
-    public boolean updateVillage(
+    @RequestWrapper(localName = "deleteVillage", targetNamespace = "http://AddressEx.addressService.service.clinicawebservice.com/", className = "service.DeleteVillage")
+    @ResponseWrapper(localName = "deleteVillageResponse", targetNamespace = "http://AddressEx.addressService.service.clinicawebservice.com/", className = "service.DeleteVillageResponse")
+    @Action(input = "http://AddressEx.addressService.service.clinicawebservice.com/TvillageService/deleteVillageRequest", output = "http://AddressEx.addressService.service.clinicawebservice.com/TvillageService/deleteVillageResponse")
+    public boolean deleteVillage(
         @WebParam(name = "arg0", targetNamespace = "")
         TvillageDto arg0);
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns boolean
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "deleteProvince", targetNamespace = "http://AddressEx.addressService.service.clinicawebservice.com/", className = "service.DeleteProvince")
-    @ResponseWrapper(localName = "deleteProvinceResponse", targetNamespace = "http://AddressEx.addressService.service.clinicawebservice.com/", className = "service.DeleteProvinceResponse")
-    @Action(input = "http://AddressEx.addressService.service.clinicawebservice.com/TvillageService/deleteProvinceRequest", output = "http://AddressEx.addressService.service.clinicawebservice.com/TvillageService/deleteProvinceResponse")
-    public boolean deleteProvince(
-        @WebParam(name = "arg0", targetNamespace = "")
-        TvillageDto arg0);
-
-    /**
-     * 
-     * @return
-     *     returns java.util.List<service.TvillageDto>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "listVillages", targetNamespace = "http://AddressEx.addressService.service.clinicawebservice.com/", className = "service.ListVillages")
-    @ResponseWrapper(localName = "listVillagesResponse", targetNamespace = "http://AddressEx.addressService.service.clinicawebservice.com/", className = "service.ListVillagesResponse")
-    @Action(input = "http://AddressEx.addressService.service.clinicawebservice.com/TvillageService/listVillagesRequest", output = "http://AddressEx.addressService.service.clinicawebservice.com/TvillageService/listVillagesResponse")
-    public List<TvillageDto> listVillages();
 
     /**
      * 
@@ -96,5 +69,32 @@ public interface TvillageService {
     public boolean insertVillage(
         @WebParam(name = "arg0", targetNamespace = "")
         TvillageDto arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "updateVillage", targetNamespace = "http://AddressEx.addressService.service.clinicawebservice.com/", className = "service.UpdateVillage")
+    @ResponseWrapper(localName = "updateVillageResponse", targetNamespace = "http://AddressEx.addressService.service.clinicawebservice.com/", className = "service.UpdateVillageResponse")
+    @Action(input = "http://AddressEx.addressService.service.clinicawebservice.com/TvillageService/updateVillageRequest", output = "http://AddressEx.addressService.service.clinicawebservice.com/TvillageService/updateVillageResponse")
+    public boolean updateVillage(
+        @WebParam(name = "arg0", targetNamespace = "")
+        TvillageDto arg0);
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<service.TvillageDto>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "listVillages", targetNamespace = "http://AddressEx.addressService.service.clinicawebservice.com/", className = "service.ListVillages")
+    @ResponseWrapper(localName = "listVillagesResponse", targetNamespace = "http://AddressEx.addressService.service.clinicawebservice.com/", className = "service.ListVillagesResponse")
+    @Action(input = "http://AddressEx.addressService.service.clinicawebservice.com/TvillageService/listVillagesRequest", output = "http://AddressEx.addressService.service.clinicawebservice.com/TvillageService/listVillagesResponse")
+    public List<TvillageDto> listVillages();
 
 }

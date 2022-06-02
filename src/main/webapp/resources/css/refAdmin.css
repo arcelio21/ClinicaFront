@@ -6,7 +6,7 @@ li{
     margin-left: 10%;
 }
 .options{
-    color: white;
+    color: #7070de;
     text-decoration: none;
 
 }
@@ -28,3 +28,15 @@ li{
 .links:focus{
 
 }
+
+.btnSidebar{
+    color: #f3ecec !important;
+    padding: 1% !important;
+    display: inline-flex  !important;
+    justify-content: center !important;
+}
+
+.btnSidebar:hover{
+    text-decoration: none !important;
+}
+

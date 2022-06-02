@@ -42,33 +42,6 @@ public interface TstatusService {
 
     /**
      * 
-     * @return
-     *     returns java.util.List<service.TstatusDto>
-     */
-    @WebMethod(operationName = "LIST_ALL_STATUS")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "LIST_ALL_STATUS", targetNamespace = "http://statusService.service.clinicawebservice.com/", className = "service.LISTALLSTATUS")
-    @ResponseWrapper(localName = "LIST_ALL_STATUSResponse", targetNamespace = "http://statusService.service.clinicawebservice.com/", className = "service.LISTALLSTATUSResponse")
-    @Action(input = "http://statusService.service.clinicawebservice.com/TstatusService/LIST_ALL_STATUSRequest", output = "http://statusService.service.clinicawebservice.com/TstatusService/LIST_ALL_STATUSResponse")
-    public List<TstatusDto> listALLSTATUS();
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns service.TstatusDto
-     */
-    @WebMethod(operationName = "SEARCH_STATUS")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "SEARCH_STATUS", targetNamespace = "http://statusService.service.clinicawebservice.com/", className = "service.SEARCHSTATUS")
-    @ResponseWrapper(localName = "SEARCH_STATUSResponse", targetNamespace = "http://statusService.service.clinicawebservice.com/", className = "service.SEARCHSTATUSResponse")
-    @Action(input = "http://statusService.service.clinicawebservice.com/TstatusService/SEARCH_STATUSRequest", output = "http://statusService.service.clinicawebservice.com/TstatusService/SEARCH_STATUSResponse")
-    public TstatusDto searchSTATUS(
-        @WebParam(name = "arg0", targetNamespace = "")
-        TstatusDto arg0);
-
-    /**
-     * 
      * @param arg0
      * @return
      *     returns boolean
@@ -96,5 +69,32 @@ public interface TstatusService {
     public boolean deleteSTATUS(
         @WebParam(name = "arg0", targetNamespace = "")
         TstatusDto arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns service.TstatusDto
+     */
+    @WebMethod(operationName = "SEARCH_STATUS")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "SEARCH_STATUS", targetNamespace = "http://statusService.service.clinicawebservice.com/", className = "service.SEARCHSTATUS")
+    @ResponseWrapper(localName = "SEARCH_STATUSResponse", targetNamespace = "http://statusService.service.clinicawebservice.com/", className = "service.SEARCHSTATUSResponse")
+    @Action(input = "http://statusService.service.clinicawebservice.com/TstatusService/SEARCH_STATUSRequest", output = "http://statusService.service.clinicawebservice.com/TstatusService/SEARCH_STATUSResponse")
+    public TstatusDto searchSTATUS(
+        @WebParam(name = "arg0", targetNamespace = "")
+        TstatusDto arg0);
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<service.TstatusDto>
+     */
+    @WebMethod(operationName = "LIST_ALL_STATUS")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "LIST_ALL_STATUS", targetNamespace = "http://statusService.service.clinicawebservice.com/", className = "service.LISTALLSTATUS")
+    @ResponseWrapper(localName = "LIST_ALL_STATUSResponse", targetNamespace = "http://statusService.service.clinicawebservice.com/", className = "service.LISTALLSTATUSResponse")
+    @Action(input = "http://statusService.service.clinicawebservice.com/TstatusService/LIST_ALL_STATUSRequest", output = "http://statusService.service.clinicawebservice.com/TstatusService/LIST_ALL_STATUSResponse")
+    public List<TstatusDto> listALLSTATUS();
 
 }

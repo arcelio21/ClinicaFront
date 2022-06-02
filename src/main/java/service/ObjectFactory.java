@@ -24,8 +24,8 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _DeleteProvince_QNAME = new QName("http://AddressEx.addressService.service.clinicawebservice.com/", "deleteProvince");
-    private final static QName _DeleteProvinceResponse_QNAME = new QName("http://AddressEx.addressService.service.clinicawebservice.com/", "deleteProvinceResponse");
+    private final static QName _DeleteVillage_QNAME = new QName("http://AddressEx.addressService.service.clinicawebservice.com/", "deleteVillage");
+    private final static QName _DeleteVillageResponse_QNAME = new QName("http://AddressEx.addressService.service.clinicawebservice.com/", "deleteVillageResponse");
     private final static QName _InsertVillage_QNAME = new QName("http://AddressEx.addressService.service.clinicawebservice.com/", "insertVillage");
     private final static QName _InsertVillageResponse_QNAME = new QName("http://AddressEx.addressService.service.clinicawebservice.com/", "insertVillageResponse");
     private final static QName _ListVillages_QNAME = new QName("http://AddressEx.addressService.service.clinicawebservice.com/", "listVillages");
@@ -43,19 +43,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link DeleteProvince }
+     * Create an instance of {@link DeleteVillage }
      * 
      */
-    public DeleteProvince createDeleteProvince() {
-        return new DeleteProvince();
+    public DeleteVillage createDeleteVillage() {
+        return new DeleteVillage();
     }
 
     /**
-     * Create an instance of {@link DeleteProvinceResponse }
+     * Create an instance of {@link DeleteVillageResponse }
      * 
      */
-    public DeleteProvinceResponse createDeleteProvinceResponse() {
-        return new DeleteProvinceResponse();
+    public DeleteVillageResponse createDeleteVillageResponse() {
+        return new DeleteVillageResponse();
     }
 
     /**
@@ -131,29 +131,29 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link DeleteProvince }{@code >}
+     * Create an instance of {@link JAXBElement }{@code <}{@link DeleteVillage }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link DeleteProvince }{@code >}
+     *     the new instance of {@link JAXBElement }{@code <}{@link DeleteVillage }{@code >}
      */
-    @XmlElementDecl(namespace = "http://AddressEx.addressService.service.clinicawebservice.com/", name = "deleteProvince")
-    public JAXBElement<DeleteProvince> createDeleteProvince(DeleteProvince value) {
-        return new JAXBElement<DeleteProvince>(_DeleteProvince_QNAME, DeleteProvince.class, null, value);
+    @XmlElementDecl(namespace = "http://AddressEx.addressService.service.clinicawebservice.com/", name = "deleteVillage")
+    public JAXBElement<DeleteVillage> createDeleteVillage(DeleteVillage value) {
+        return new JAXBElement<DeleteVillage>(_DeleteVillage_QNAME, DeleteVillage.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link DeleteProvinceResponse }{@code >}
+     * Create an instance of {@link JAXBElement }{@code <}{@link DeleteVillageResponse }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link DeleteProvinceResponse }{@code >}
+     *     the new instance of {@link JAXBElement }{@code <}{@link DeleteVillageResponse }{@code >}
      */
-    @XmlElementDecl(namespace = "http://AddressEx.addressService.service.clinicawebservice.com/", name = "deleteProvinceResponse")
-    public JAXBElement<DeleteProvinceResponse> createDeleteProvinceResponse(DeleteProvinceResponse value) {
-        return new JAXBElement<DeleteProvinceResponse>(_DeleteProvinceResponse_QNAME, DeleteProvinceResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://AddressEx.addressService.service.clinicawebservice.com/", name = "deleteVillageResponse")
+    public JAXBElement<DeleteVillageResponse> createDeleteVillageResponse(DeleteVillageResponse value) {
+        return new JAXBElement<DeleteVillageResponse>(_DeleteVillageResponse_QNAME, DeleteVillageResponse.class, null, value);
     }
 
     /**

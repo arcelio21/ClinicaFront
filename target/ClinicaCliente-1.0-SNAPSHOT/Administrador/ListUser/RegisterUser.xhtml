@@ -1,7 +1,6 @@
 
     <ui:composition  xmlns="http://www.w3.org/1999/xhtml"
                      xmlns:h="http://java.sun.com/jsf/html"
-                     xmlns:jsf="http://xmlns.jcp.org/jsf"
                      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                      xmlns:f="http://xmlns.jcp.org/jsf/core"
                      xmlns:p="http://primefaces.org/ui"
@@ -17,16 +16,33 @@
         <!--REDEFINIENDO LA SECCION DE BODY O CONTENT-->
         <ui:define name="body">
 
+            <p:growl>
+                <p:autoUpdate/><!--PARA MOSTRA LOS MENSAJES DE CUALQUIER CAMBIOS HECHO EN LOS DATOS-->
+            </p:growl>
+
             <!--BOTON PARA AGREGAR NUEVO USUARIO-->
             <div id="optionsData">
-                <h:form style="display: inline">
-                <p:commandButton styleClass="btnAdd" value="Agregar usuario" actionListener="#{listuser.initUser()}" update=":userAddDlg" oncomplete="PF('addUserDialog').show();" />
+                <h:form id="formbtnUser" style="display: inline" >
+                <p:commandButton id="btnAddUser" styleClass=" btnAddUser " value="Agregar usuario" actionListener="#{listuser.initUser()}" update=":userAddDlg" oncomplete="PF('addUserDialog').show();" />
+
                 </h:form>
 
+                <h:form style="display: inline">
+                    <span  class="ui-input-icon-left inputSearch">
+                        <i class="pi pi-search" />
+                        <p:inputText   placeholder="Busqueda por cedula" id="idenCardSearch"  value="#{listuser.filterIndecard}">
+                            <f:ajax event="blur" render=":user_Data" listener="#{listuser.filerUserByIdenCard()}"   />
+                        </p:inputText>
+                    </span>
+                </h:form>
             </div>
-            <div id="datos_table">
 
-                <h:dataTable id="user_Data" styleClass="table_user" value="#{listuser.tuserregDtoList}" var="user" border="1" binding="#{listuser.myDataTable}" >
+
+            <!--SE INCLUYE EL ARCHIVO DE LA VENTANA MODAL PARA AGREGAR USUARIO-->
+            <ui:include src="Modal_add_user.xhtml" />
+            <p:outputPanel id="panelData" styleClass="datos_table">
+
+                <h:dataTable id="user_Data" styleClass="table_user" value="#{(listuser.backupUser==null)?listuser.tuserregDtoList:listuser.backupUser}" var="user" border="1"  >
 
                     <!--DATOS DE USUARIOS-->
 
@@ -41,9 +57,10 @@
                     </h:column>
 
                     <!--CEDULA-->
-                    <h:column>
+                    <h:column >
                         <f:facet name="header">Cedula</f:facet>
                         #{user.idenCard}
+
                     </h:column>
 
                     <!--NOMBRE-->
@@ -61,7 +78,7 @@
                     <!--DIRECCION-->
                     <h:column>
                         <f:facet name="header">Direccion</f:facet>
-                        #{user.idAddressId}
+                        En proceso de creacion
                     </h:column>
 
                     <!--E-MAIL-->
@@ -83,22 +100,36 @@
                     <!--ELIMINAR-->
                     <h:column>
                         <f:facet name="header">Eliminar</f:facet>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user-x">
-                            <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                            <circle cx="8.5" cy="7" r="4" />
-                            <line x1="18" y1="8" x2="23" y2="13" />
-                            <line x1="23" y1="8" x2="18" y2="13" />
-                        </svg>
+                            <!--ESTE BOTON SE ENCARGAR DE ELIMINAR USUARIOS-->
+                            <p:commandLink  actionListener="#{listuser.removeUser(user)}" update="panelData"  styleClass="ui-button-danger deletebtn" >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user-x">
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                    <circle cx="8.5" cy="7" r="4" />
+                                    <line x1="18" y1="8" x2="23" y2="13" />
+                                    <line x1="23" y1="8" x2="18" y2="13" />
+                                </svg>
+                                <p:confirm header="Confirmacion" message="¿Desea eliminar el registro?" icon="pi pi-info-circle"/>
+
+                            </p:commandLink>
+
+                        <!--DIALOGO DE CONFIRMACION DE ELIMINACION-->
+                        <p:confirmDialog global="true"  showEffect="fade" hideEffect="fade" responsive="true" width="350">
+                            <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no ui-button-flat"/>
+                            <p:commandButton value="Si" type="button" styleClass="ui-confirmdialog-yes" />
+                        </p:confirmDialog>
+
+
                     </h:column>
 
                 </h:dataTable>
 
-            </div>
+            </p:outputPanel>
 
 
-         <!--SE INCLUYE EL ARCHIVO DE LA VENTANA MODAL PARA AGREGAR USUARIO-->
-        <ui:include src="Modal_add_user.xhtml" />
-            <ui:include src="Modal_update_user.xhtml" />
+
+
+            <!--SE INCLUYE EL ARCHIVO DE LA VENTANA MODAL PARA ACTUALIZAR USUARIO-->
+         <ui:include src="Modal_update_user.xhtml" />
 
 
 

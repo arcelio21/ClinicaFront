@@ -13,52 +13,49 @@
         <p:dialog id="userAddDlg"  widgetVar="addUserDialog" header="Agregar nuevo usuario" modal="true"  showEffect="fade" hideEffect="fade" resizable="false">
             <!--widgetVar: para poder referecniar el elemento(nombre), modal: para que se muestre encima de la pag HTML,
                        showEfect & hideEfecte: para que se oculte y muestre paulatinamente el dialog; rizable: para que no se pueda reajustar el tamaño del dialog -->
-            <p:ajax event="close" listener="#{listuser.editUser()}" update=":addUserFormDlg" />
+            <p:ajax event="close" listener="#{listuser.initUser()}" update=":addUserFormDlg" />
 
             <!--FORMULARIO DE ADD_USER-->
             <h:form id="addUserFormDlg">
+
                 <p:outputPanel id="userDetail">
                     <p:panelGrid id="display" columns="4"   columnClasses="label,value">
 
                         <h:outputText value="Cedula" />
-                        <h:inputText value="#{listuser.newUser.idenCard}" required="true" readonly="#{listuser.newUser.idenCard!=null}"/>
+                        <p:inputText value="#{listuser.newUser.idenCard}" required="true" readonly="#{listuser.newUser.idenCard!=null}"/>
 
                         <h:outputText value="Nombre" />
-                        <h:inputText value="#{listuser.newUser.nameUser}" required="true"/>
+                        <p:inputText value="#{listuser.newUser.nameUser}" required="true"/>
 
                         <h:outputText value="Apellido" />
-                        <h:inputText value="#{listuser.newUser.lastName}" required="true"/>
+                        <p:inputText value="#{listuser.newUser.lastName}" required="true"/>
 
                         <h:outputText value="Contacto" />
-                        <h:inputText value="#{listuser.newUser.contact}"  />
+                        <p:inputText id="contact" value="#{listuser.newUser.contact}"  >
+                            <f:validateLength minimum="7" maximum="8"  />
+                            <p:clientValidator />
+                            <p:message for="contact" display="icon" />
+                        </p:inputText>
+
 
                         <h:outputText value="E-mail" />
-                        <h:inputText value="#{listuser.newUser.email}"  required="true" />
+                        <p:inputText value="#{listuser.newUser.email}"  required="true" />
 
                         <h:outputText value="Contraseña" />
-                        <h:inputSecret value="#{listuser.newUser.pass}" required="true"/>
+                        <p:password value="#{listuser.newUser.pass}" required="true" feedback="true" toggleMask="true" promptLabel="Ingresa contraseña" weakLabel="Debil" goodLabel="Buena" strongLabel="Fuerte" />
 
-                        <h:outputText value="Direccion" />
-                        <h:inputText value="#{listuser.userSelect.idAddressId}" required="true"/>
 
                         <f:facet name="footer">
-                            <p:commandButton value="Guardar" rendered="#{listuser.newUser.idenCard==null}" update="display,:user_Data" actionListener="#{listuser.userRegAdd()}" oncomplete="PF('addUserDialog').hide();">
-                                <!--update: para que se actualice la tabla de datos; oncomplete: se oculta el panel de dialogo-->
 
-                            </p:commandButton>
+                            <p:commandButton  value="Guardar" icon="pi pi-check" styleClass="ui-button-success" update="display,:user_Data" actionListener="#{listuser.userRegAdd()}" oncomplete="PF('addUserDialog').hide();" />
 
-                        </f:facet>
-                        <f:facet name="footer">
-                            <p:commandButton immediate="true" value="Guardar cambios" rendered="#{listuser.newUser.idenCard!=null}" update="display,:user_Data" actionListener="#{listuser.updateUser()}" oncomplete="PF('addUserDialog').hide();">
-                                <!--update: para que se actualice la tabla de datos; oncomplete: se oculta el panel de dialogo-->
-
-                            </p:commandButton>
                         </f:facet>
 
 
                     </p:panelGrid>
 
                 </p:outputPanel>
+
             </h:form>
 
         </p:dialog>

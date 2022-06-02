@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "TstatusServiceImplService", targetNamespace = "http://statusService.service.clinicawebservice.com/", wsdlLocation = "http://192.168.137.1:7001/TstatusServiceImpl/TstatusServiceImplService?WSDL")
+@WebServiceClient(name = "TstatusServiceImplService", targetNamespace = "http://statusService.service.clinicawebservice.com/", wsdlLocation = "http://localhost:7001/TstatusServiceImpl/TstatusServiceImplService?WSDL")
 public class TstatusServiceImplService
     extends Service
 {
@@ -30,7 +30,7 @@ public class TstatusServiceImplService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://192.168.137.1:7001/TstatusServiceImpl/TstatusServiceImplService?WSDL");
+            url = new URL("http://localhost:7001/TstatusServiceImpl/TstatusServiceImplService?WSDL");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

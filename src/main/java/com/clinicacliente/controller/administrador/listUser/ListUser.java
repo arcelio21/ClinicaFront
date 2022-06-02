@@ -2,17 +2,14 @@ package com.clinicacliente.controller.administrador.listUser;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import service.TuserTypeRegsService;
 import service.TuserregDto;
 import service.TusuarioRegsService;
 import service.TusuarioRegsServiceImplService;
 
 import javax.annotation.PostConstruct;
-import javax.faces.component.html.HtmlDataTable;
-import javax.faces.event.ActionEvent;
-import javax.faces.event.ComponentSystemEvent;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
-import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -27,7 +24,9 @@ public class ListUser implements Serializable {
     private List<TuserregDto> tuserregDtoList=new ArrayList<>();//SE ENCARGAR DE ALMACENAR LOS USUARIOS QUE SE TRAE DE LA BD
     private TuserregDto newUser;//GUARDAR LOS DATOS QUE SE INGRESEN PARA UN NUEVO USAURIO
     private TuserregDto userSelect; //ALMACENAR LOS USUARIOS QUE SE VAN A  EDITAR O ELIMINAR
-    private HtmlDataTable myDataTable; //GUARDAR LOS DATOS INGRESADOS EN EL DATATABLE JSF
+    private TuserregDto backupUser;
+    private String filterIndecard="";
+
 
 
     public ListUser() {
@@ -54,6 +53,7 @@ public class ListUser implements Serializable {
             this.tuserregDtoList.add(this.newUser);
 
             this.initUser();
+            this.addMessage("Registro creado");
         }else {
             log.debug("ERROR INSERT JSF");
             this.initUser();
@@ -75,34 +75,73 @@ public class ListUser implements Serializable {
         this.userSelect=userSelect;
     }
 
-
+    public void updatePass(){
+        System.out.println("Valor de pass: "+this.userSelect.getPass());
+        /*String pass=this.userSelect.getPass();
+        this.userSelect.setPass(pass);*/
+    }
     /*
     * METODO QUE ACTUALIZA EL VALOR DEL USUARIO ELEGIDO PARA EDITAR
     * */
     public void updateUser(){
-        log.debug(this.userSelect.getNameUser());
         TusuarioRegsService tusuarioRegsService=new TusuarioRegsServiceImplService().getTusuarioRegsServiceImplPort();
         boolean validate=tusuarioRegsService.updateUserReg(this.userSelect);
         if(validate){
 
-
-            for(TuserregDto tuserregDto : this.tuserregDtoList){
-                if(tuserregDto.getIdenCard().equals(this.userSelect.getIdenCard())){
-                    tuserregDto=this.userSelect;
-                    break;
-                }
-            }
             this.reInitUserSelec();
+            this.addMessage("Registro Actualizado");
 
-            log.debug("OBJ REINICIADO");
         }else {
             log.debug("ERROR UPDATE");
         }
+
     }
 
     public void reInitUserSelec(){
         this.userSelect=null;
         log.debug("DATOS DE OBJ USERSELECT VACIADOS");
+    }
+
+
+    /*
+    * METODO PARA ELIMINAR REGISTRO DE UN USUARIOS
+    * */
+    public void removeUser(TuserregDto userRemove){
+        TusuarioRegsService tusuarioRegsService= new TusuarioRegsServiceImplService().getTusuarioRegsServiceImplPort();
+        boolean validateRemove=tusuarioRegsService.deleteUserReg(userRemove);
+        if(validateRemove){
+            log.debug("DELETE SUCCESS");
+            this.tuserregDtoList.remove(userRemove); //ELIMINANDO EL USUARIO DE LA LISTA
+            this.addMessage("Registro Eliminado");
+        }else {
+            log.debug("DELETE ERROR");
+        }
+    }
+
+    /*
+    * BUSCARA LOS DATOS DE LA PERSONA INGRESADA
+    * */
+    public void filerUserByIdenCard(){
+
+        if(!this.filterIndecard.isEmpty()){
+            for (TuserregDto userTest:this.tuserregDtoList) {
+                if(userTest.getIdenCard().equals(this.filterIndecard)){
+                    this.backupUser=userTest;
+                    break;
+                }
+            }
+        }else if(this.backupUser!=null) {
+            this.backupUser=null;
+        }else {
+            this.backupUser=null;
+        }
+    }
+
+    /*
+    * MUESTRA UN MENSAJE EN PANTALLA LUEGO REALIZAR ALGUNA ACCION
+    * */
+    public void addMessage(String message) {
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(message));
     }
 
     public void setTuserregDtoList(List<TuserregDto> tuserregDtoList) {
@@ -121,13 +160,6 @@ public class ListUser implements Serializable {
         this.newUser = newUser;
     }
 
-    public HtmlDataTable getMyDataTable() {
-        return myDataTable;
-    }
-
-    public void setMyDataTable(HtmlDataTable myDataTable) {
-        this.myDataTable = myDataTable;
-    }
 
     public TuserregDto getUserSelect() {
         return userSelect;
@@ -135,5 +167,21 @@ public class ListUser implements Serializable {
 
     public void setUserSelect(TuserregDto userSelect) {
         this.userSelect = userSelect;
+    }
+
+    public String getFilterIndecard() {
+        return filterIndecard;
+    }
+
+    public void setFilterIndecard(String filterIndecard) {
+        this.filterIndecard = filterIndecard;
+    }
+
+    public TuserregDto getBackupUser() {
+        return backupUser;
+    }
+
+    public void setBackupUser(TuserregDto backupUser) {
+        this.backupUser = backupUser;
     }
 }

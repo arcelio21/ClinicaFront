@@ -8,7 +8,7 @@ article{
 .optionsData{
 
 }
-#datos_table{
+.datos_table{
     overflow:auto;
 }
 
@@ -45,16 +45,28 @@ article{
 
 }
 
-form #j_idt18{
-    background-color: white;
-    color: #3f3fa1;
-    font-weight: bold;
-    border: 1px solid #330b57;
+
+
+
+
+.btnAddUser{
+    background-color: white !important;
+    color: #3f3fa1 !important;
+    border: 1px solid #330b57 !important;
+    font-weight: bold ;
+}
+.btnAddUser:hover{
+    background-color: #356e35 !important;
+    color: white !important;
+    border:none !important;
+    box-shadow: inset 0 0 2px white !important;
 }
 
-form #j_idt18:hover{
-    background-color: #356e35;
-    color: white;
-    border:none;
-    box-shadow: inset 0 0 2px white;
+.inputSearch{
+    margin-left: 2% !important;
+}
+
+/*CAMBIAR EL COLOR DEL BOTON DE ELIMINAR USER*/
+.deletebtn{
+    color: #be2929 !important;
 }

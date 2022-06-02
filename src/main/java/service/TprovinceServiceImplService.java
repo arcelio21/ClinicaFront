@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "TprovinceServiceImplService", targetNamespace = "http://AddressEx.addressService.service.clinicawebservice.com/", wsdlLocation = "http://192.168.137.1:7001/TprovinceServiceImpl/TprovinceServiceImplService?WSDL")
+@WebServiceClient(name = "TprovinceServiceImplService", targetNamespace = "http://AddressEx.addressService.service.clinicawebservice.com/", wsdlLocation = "http://localhost:7001/TprovinceServiceImpl/TprovinceServiceImplService?WSDL")
 public class TprovinceServiceImplService
     extends Service
 {
@@ -30,7 +30,7 @@ public class TprovinceServiceImplService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://192.168.137.1:7001/TprovinceServiceImpl/TprovinceServiceImplService?WSDL");
+            url = new URL("http://localhost:7001/TprovinceServiceImpl/TprovinceServiceImplService?WSDL");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

@@ -12,12 +12,12 @@
     grid-template-areas:
             'headerG headerG headerG headerG'
             'navG navG navG navG'
-            'asideG  ContentG ContentG ContentG'
-            'asideG  ContentG ContentG ContentG'
-            'asideG  ContentG ContentG ContentG'
-            'asideG  ContentG ContentG ContentG'
-            'asideG  ContentG ContentG ContentG'
-            'asideG ContentG ContentG ContentG'
+            'ContentG  ContentG ContentG ContentG'
+            'ContentG  ContentG ContentG ContentG'
+            'ContentG  ContentG ContentG ContentG'
+            'ContentG  ContentG ContentG ContentG'
+            'ContentG  ContentG ContentG ContentG'
+            'ContentG ContentG ContentG ContentG'
             'footerG footerG footerG footerG';
     margin: 0px;
     height: 100Vh;
@@ -40,14 +40,17 @@ header{
 
 nav{
     grid-area: navG;
-    text-align: end;
+    text-align: start;
     padding-right: 5%;
+    padding-left: 2%;
     /*border: 1px solid #8f8fd3;
     border-radius: 5px;
     box-sizing: border-box;*/
 
 }
-
+nav h2{
+    text-align: end;
+}
 aside{
     grid-area: asideG;
     padding-left: 5%;

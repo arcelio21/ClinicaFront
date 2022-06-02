@@ -27,16 +27,28 @@ public interface TdistrictService {
 
     /**
      * 
-     * @param arg0
      * @return
-     *     returns boolean
+     *     returns java.util.List<service.TdistrictDto>
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "updateDistrict", targetNamespace = "http://AddressEx.addressService.service.clinicawebservice.com/", className = "service.UpdateDistrict")
-    @ResponseWrapper(localName = "updateDistrictResponse", targetNamespace = "http://AddressEx.addressService.service.clinicawebservice.com/", className = "service.UpdateDistrictResponse")
-    @Action(input = "http://AddressEx.addressService.service.clinicawebservice.com/TdistrictService/updateDistrictRequest", output = "http://AddressEx.addressService.service.clinicawebservice.com/TdistrictService/updateDistrictResponse")
-    public boolean updateDistrict(
+    @RequestWrapper(localName = "listDistricts", targetNamespace = "http://AddressEx.addressService.service.clinicawebservice.com/", className = "service.ListDistricts")
+    @ResponseWrapper(localName = "listDistrictsResponse", targetNamespace = "http://AddressEx.addressService.service.clinicawebservice.com/", className = "service.ListDistrictsResponse")
+    @Action(input = "http://AddressEx.addressService.service.clinicawebservice.com/TdistrictService/listDistrictsRequest", output = "http://AddressEx.addressService.service.clinicawebservice.com/TdistrictService/listDistrictsResponse")
+    public List<TdistrictDto> listDistricts();
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns service.TdistrictDto
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "searchDistrictById", targetNamespace = "http://AddressEx.addressService.service.clinicawebservice.com/", className = "service.SearchDistrictById")
+    @ResponseWrapper(localName = "searchDistrictByIdResponse", targetNamespace = "http://AddressEx.addressService.service.clinicawebservice.com/", className = "service.SearchDistrictByIdResponse")
+    @Action(input = "http://AddressEx.addressService.service.clinicawebservice.com/TdistrictService/searchDistrictByIdRequest", output = "http://AddressEx.addressService.service.clinicawebservice.com/TdistrictService/searchDistrictByIdResponse")
+    public TdistrictDto searchDistrictById(
         @WebParam(name = "arg0", targetNamespace = "")
         TdistrictDto arg0);
 
@@ -63,37 +75,25 @@ public interface TdistrictService {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "deleteDistrict", targetNamespace = "http://AddressEx.addressService.service.clinicawebservice.com/", className = "service.DeleteDistrict")
-    @ResponseWrapper(localName = "deleteDistrictResponse", targetNamespace = "http://AddressEx.addressService.service.clinicawebservice.com/", className = "service.DeleteDistrictResponse")
-    @Action(input = "http://AddressEx.addressService.service.clinicawebservice.com/TdistrictService/deleteDistrictRequest", output = "http://AddressEx.addressService.service.clinicawebservice.com/TdistrictService/deleteDistrictResponse")
-    public boolean deleteDistrict(
+    @RequestWrapper(localName = "updateDistrict", targetNamespace = "http://AddressEx.addressService.service.clinicawebservice.com/", className = "service.UpdateDistrict")
+    @ResponseWrapper(localName = "updateDistrictResponse", targetNamespace = "http://AddressEx.addressService.service.clinicawebservice.com/", className = "service.UpdateDistrictResponse")
+    @Action(input = "http://AddressEx.addressService.service.clinicawebservice.com/TdistrictService/updateDistrictRequest", output = "http://AddressEx.addressService.service.clinicawebservice.com/TdistrictService/updateDistrictResponse")
+    public boolean updateDistrict(
         @WebParam(name = "arg0", targetNamespace = "")
         TdistrictDto arg0);
 
     /**
      * 
-     * @return
-     *     returns java.util.List<service.TdistrictDto>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "listDistricts", targetNamespace = "http://AddressEx.addressService.service.clinicawebservice.com/", className = "service.ListDistricts")
-    @ResponseWrapper(localName = "listDistrictsResponse", targetNamespace = "http://AddressEx.addressService.service.clinicawebservice.com/", className = "service.ListDistrictsResponse")
-    @Action(input = "http://AddressEx.addressService.service.clinicawebservice.com/TdistrictService/listDistrictsRequest", output = "http://AddressEx.addressService.service.clinicawebservice.com/TdistrictService/listDistrictsResponse")
-    public List<TdistrictDto> listDistricts();
-
-    /**
-     * 
      * @param arg0
      * @return
-     *     returns service.TdistrictDto
+     *     returns boolean
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "searchDistrictById", targetNamespace = "http://AddressEx.addressService.service.clinicawebservice.com/", className = "service.SearchDistrictById")
-    @ResponseWrapper(localName = "searchDistrictByIdResponse", targetNamespace = "http://AddressEx.addressService.service.clinicawebservice.com/", className = "service.SearchDistrictByIdResponse")
-    @Action(input = "http://AddressEx.addressService.service.clinicawebservice.com/TdistrictService/searchDistrictByIdRequest", output = "http://AddressEx.addressService.service.clinicawebservice.com/TdistrictService/searchDistrictByIdResponse")
-    public TdistrictDto searchDistrictById(
+    @RequestWrapper(localName = "deleteDistrict", targetNamespace = "http://AddressEx.addressService.service.clinicawebservice.com/", className = "service.DeleteDistrict")
+    @ResponseWrapper(localName = "deleteDistrictResponse", targetNamespace = "http://AddressEx.addressService.service.clinicawebservice.com/", className = "service.DeleteDistrictResponse")
+    @Action(input = "http://AddressEx.addressService.service.clinicawebservice.com/TdistrictService/deleteDistrictRequest", output = "http://AddressEx.addressService.service.clinicawebservice.com/TdistrictService/deleteDistrictResponse")
+    public boolean deleteDistrict(
         @WebParam(name = "arg0", targetNamespace = "")
         TdistrictDto arg0);
 

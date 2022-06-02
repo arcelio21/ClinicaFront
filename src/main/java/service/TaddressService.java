@@ -27,18 +27,15 @@ public interface TaddressService {
 
     /**
      * 
-     * @param arg0
      * @return
-     *     returns boolean
+     *     returns java.util.List<service.TaddressDto>
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "insertAddress", targetNamespace = "http://addressService.service.clinicawebservice.com/", className = "service.InsertAddress")
-    @ResponseWrapper(localName = "insertAddressResponse", targetNamespace = "http://addressService.service.clinicawebservice.com/", className = "service.InsertAddressResponse")
-    @Action(input = "http://addressService.service.clinicawebservice.com/TaddressService/insertAddressRequest", output = "http://addressService.service.clinicawebservice.com/TaddressService/insertAddressResponse")
-    public boolean insertAddress(
-        @WebParam(name = "arg0", targetNamespace = "")
-        TaddressDto arg0);
+    @RequestWrapper(localName = "listAddress", targetNamespace = "http://addressService.service.clinicawebservice.com/", className = "service.ListAddress")
+    @ResponseWrapper(localName = "listAddressResponse", targetNamespace = "http://addressService.service.clinicawebservice.com/", className = "service.ListAddressResponse")
+    @Action(input = "http://addressService.service.clinicawebservice.com/TaddressService/listAddressRequest", output = "http://addressService.service.clinicawebservice.com/TaddressService/listAddressResponse")
+    public List<TaddressDto> listAddress();
 
     /**
      * 
@@ -72,15 +69,18 @@ public interface TaddressService {
 
     /**
      * 
+     * @param arg0
      * @return
-     *     returns java.util.List<service.TaddressDto>
+     *     returns boolean
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "listAddress", targetNamespace = "http://addressService.service.clinicawebservice.com/", className = "service.ListAddress")
-    @ResponseWrapper(localName = "listAddressResponse", targetNamespace = "http://addressService.service.clinicawebservice.com/", className = "service.ListAddressResponse")
-    @Action(input = "http://addressService.service.clinicawebservice.com/TaddressService/listAddressRequest", output = "http://addressService.service.clinicawebservice.com/TaddressService/listAddressResponse")
-    public List<TaddressDto> listAddress();
+    @RequestWrapper(localName = "insertAddress", targetNamespace = "http://addressService.service.clinicawebservice.com/", className = "service.InsertAddress")
+    @ResponseWrapper(localName = "insertAddressResponse", targetNamespace = "http://addressService.service.clinicawebservice.com/", className = "service.InsertAddressResponse")
+    @Action(input = "http://addressService.service.clinicawebservice.com/TaddressService/insertAddressRequest", output = "http://addressService.service.clinicawebservice.com/TaddressService/insertAddressResponse")
+    public boolean insertAddress(
+        @WebParam(name = "arg0", targetNamespace = "")
+        TaddressDto arg0);
 
     /**
      * 

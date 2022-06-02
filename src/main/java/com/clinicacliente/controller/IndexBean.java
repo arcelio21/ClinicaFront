@@ -61,13 +61,10 @@ public class IndexBean implements Serializable  {
         return redireccion;
     }
 
-    public String validarRango(){
-        String redireccion="/WEB-INF/errorCredenciales";
-        if(true){
-            redireccion="/Administrador/ListUser/RegisterUser?faces-redirect=true";
-        }
+    public boolean validarRango(){
 
-        return redireccion;
+
+        return true;
     }
 
 

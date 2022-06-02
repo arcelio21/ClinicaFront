@@ -42,6 +42,7 @@ service\SearchDistrictByIdResponse.class
 service\TusuarioRegsServiceImplService.class
 service\SearchDistrictById.class
 service\UPDATESTATUSResponse.class
+com\clinicacliente\controller\administrador\address\Provinces.class
 service\InsertTypeUser.class
 service\SearchVillageById.class
 service\ValidateCredencial.class
@@ -81,11 +82,13 @@ service\SearchAddressByIdResponse.class
 service\TtypeUserDto.class
 service\TaddressDto.class
 service\ListAddress.class
+service\DeleteVillage.class
 service\SEARCHSTATUSResponse.class
 service\DELETEUSERTYPEREGResponse.class
 service\TstatusDto.class
 service\UpdateAddress.class
 service\DeleteDistrict.class
+service\DeleteVillageResponse.class
 service\DeleteUserReg.class
 service\ListDistricts.class
 service\ListProvinces.class

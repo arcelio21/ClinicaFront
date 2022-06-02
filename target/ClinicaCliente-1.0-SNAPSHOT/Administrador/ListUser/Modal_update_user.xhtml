@@ -19,33 +19,38 @@
                     <p:panelGrid id="displayEdit" columns="4"   columnClasses="label,value">
 
                         <h:outputText value="Cedula" />
-                        <h:inputText value="#{listuser.userSelect.idenCard}" required="true" readonly="true"/>
+                        <p:inputText value="#{listuser.userSelect.idenCard}" required="true"  readonly="true"/>
 
-                        <h:outputText value="Nombre" />
-                        <h:inputText value="#{listuser.userSelect.nameUser}" required="true"/>
+                        <p:outputLabel  value="Nombre" />
+                        <p:inputText id="name"  value="#{listuser.userSelect.nameUser}"  required="true" immediate="true" />
 
                         <h:outputText value="Apellido" />
-                        <h:inputText value="#{listuser.userSelect.lastName}" required="true"/>
+                        <p:inputText id="lastName" value="#{listuser.userSelect.lastName}"  />
 
                         <h:outputText value="Contacto" />
-                        <h:inputText value="#{listuser.userSelect.contact}" />
+                        <p:inputText id="contact" value="#{listuser.userSelect.contact}">
+                            <f:validateLength maximum="8" minimum="7" />
+                            <p:clientValidator />
+                        </p:inputText>
 
                         <h:outputText value="E-mail" />
-                        <h:inputText value="#{listuser.userSelect.email}"  required="true" />
+                        <p:inputText id="email" value="#{listuser.userSelect.email}"  required="true" />
 
                         <h:outputText value="Contraseña" />
-                        <h:inputSecret value="#{listuser.userSelect.pass}" required="true"/>
+                        <p:password id="pass" value="#{listuser.userSelect.pass}" >
+
+                        </p:password>
 
                         <h:outputText value="Direccion" />
-                        <h:inputText value="#{listuser.userSelect.idAddressId}" required="true"/>
+                        <p:inputText id="address"  value=" En proceso de creacion" readonly="true" required="true"/>
 
                         <h:outputText value="Fecha de creacion" />
-                        <h:inputText value="#{listuser.userSelect.fechaCreacion}" />
+                        <p:inputText id="date" value="#{listuser.userSelect.fechaCreacion}" readonly="true" />
 
                         <f:facet name="footer">
-                            <p:commandButton value="Guardar cambios"  immediate="true" update=":user_Data" actionListener="#{listuser.updateUser()}" oncomplete="PF('UpdateUserDialog').hide()">
+                            <p:commandButton value="Guardar cambios"  update=":panelData"  oncomplete="PF('UpdateUserDialog').hide()" >
                                 <!--update: para que se actualice la tabla de datos; oncomplete: se oculta el panel de dialogo-->
-
+                                <f:ajax execute=":updateUserFormDlg" listener="#{listuser.updateUser()}" />
                             </p:commandButton>
                         </f:facet>
 
@@ -54,6 +59,7 @@
 
                 </p:outputPanel>
             </h:form>
+
 
         </p:dialog>
     </ui:composition>

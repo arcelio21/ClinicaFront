@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+
+</h:head>
+
+<h:body>
+    <ui:composition>
+        <p:dialog id="editProvincedlg" header="Editar Provincia" widgetVar="editProv" modal="true"  showEffect="fade" hideEffect="fade" resizable="false">
+            <p:ajax event="close" update=":formUpdateProv" listener="#{provinces.resetEditProvince()}" />
+            <h:form id="formUpdateProv">
+                <p:outputLabel id="provinceEditDetail">
+                    <p:panelGrid id="panel" columns="2" layout="flex"
+                                 contentStyleClass="ui-fluid">
+                        <p:outputLabel for="idProvince" value="ID" />
+                        <p:inputText id="idProvince" value="#{provinces.editProvince.id}" readonly="true" />
+
+                        <p:outputLabel for="nameProv" value="Nombre" />
+                        <p:inputText id="nameProv" value="#{provinces.editProvince.nameProvince}"   />
+
+                        <f:facet name="footer">
+                            <p:commandButton value="Guardar Cambios" update="panelProvince"  oncomplete="PF('editProv').hide()">
+                                <f:ajax execute=":formUpdateProv" listener="#{provinces.updateProvince()}"  />
+                            </p:commandButton>
+
+
+                        </f:facet>
+                    </p:panelGrid>
+                </p:outputLabel>
+            </h:form>
+
+
+        </p:dialog>
+
+
+    </ui:composition>
+</h:body>
+
+</html>

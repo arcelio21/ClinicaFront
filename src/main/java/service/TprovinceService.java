@@ -44,21 +44,6 @@ public interface TprovinceService {
      * 
      * @param arg0
      * @return
-     *     returns boolean
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "deleteProvince", targetNamespace = "http://AddressEx.addressService.service.clinicawebservice.com/", className = "service.DeleteProvince")
-    @ResponseWrapper(localName = "deleteProvinceResponse", targetNamespace = "http://AddressEx.addressService.service.clinicawebservice.com/", className = "service.DeleteProvinceResponse")
-    @Action(input = "http://AddressEx.addressService.service.clinicawebservice.com/TprovinceService/deleteProvinceRequest", output = "http://AddressEx.addressService.service.clinicawebservice.com/TprovinceService/deleteProvinceResponse")
-    public boolean deleteProvince(
-        @WebParam(name = "arg0", targetNamespace = "")
-        TvillageDto arg0);
-
-    /**
-     * 
-     * @param arg0
-     * @return
      *     returns service.TprovinceDto
      */
     @WebMethod
@@ -67,6 +52,21 @@ public interface TprovinceService {
     @ResponseWrapper(localName = "searchProvinceByIdResponse", targetNamespace = "http://AddressEx.addressService.service.clinicawebservice.com/", className = "service.SearchProvinceByIdResponse")
     @Action(input = "http://AddressEx.addressService.service.clinicawebservice.com/TprovinceService/searchProvinceByIdRequest", output = "http://AddressEx.addressService.service.clinicawebservice.com/TprovinceService/searchProvinceByIdResponse")
     public TprovinceDto searchProvinceById(
+        @WebParam(name = "arg0", targetNamespace = "")
+        TprovinceDto arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "deleteProvince", targetNamespace = "http://AddressEx.addressService.service.clinicawebservice.com/", className = "service.DeleteProvince")
+    @ResponseWrapper(localName = "deleteProvinceResponse", targetNamespace = "http://AddressEx.addressService.service.clinicawebservice.com/", className = "service.DeleteProvinceResponse")
+    @Action(input = "http://AddressEx.addressService.service.clinicawebservice.com/TprovinceService/deleteProvinceRequest", output = "http://AddressEx.addressService.service.clinicawebservice.com/TprovinceService/deleteProvinceResponse")
+    public boolean deleteProvince(
         @WebParam(name = "arg0", targetNamespace = "")
         TprovinceDto arg0);
 

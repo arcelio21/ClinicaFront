@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "TuserTypeRegsServiceImplService", targetNamespace = "http://typeUserService.usersinfoService.service.clinicawebservice.com/", wsdlLocation = "http://192.168.137.1:7001/TuserTypeRegsServiceImpl/TuserTypeRegsServiceImplService?WSDL")
+@WebServiceClient(name = "TuserTypeRegsServiceImplService", targetNamespace = "http://typeUserService.usersinfoService.service.clinicawebservice.com/", wsdlLocation = "http://localhost:7001/TuserTypeRegsServiceImpl/TuserTypeRegsServiceImplService?WSDL")
 public class TuserTypeRegsServiceImplService
     extends Service
 {
@@ -30,7 +30,7 @@ public class TuserTypeRegsServiceImplService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://192.168.137.1:7001/TuserTypeRegsServiceImpl/TuserTypeRegsServiceImplService?WSDL");
+            url = new URL("http://localhost:7001/TuserTypeRegsServiceImpl/TuserTypeRegsServiceImplService?WSDL");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

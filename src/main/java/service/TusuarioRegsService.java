@@ -27,6 +27,63 @@ public interface TusuarioRegsService {
 
     /**
      * 
+     * @param usuario
+     * @return
+     *     returns service.TuserregDto
+     */
+    @WebMethod(operationName = "Search_Usuarios")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "Search_Usuarios", targetNamespace = "http://usersinfoService.service.clinicawebservice.com/", className = "service.SearchUsuarios")
+    @ResponseWrapper(localName = "Search_UsuariosResponse", targetNamespace = "http://usersinfoService.service.clinicawebservice.com/", className = "service.SearchUsuariosResponse")
+    @Action(input = "http://usersinfoService.service.clinicawebservice.com/TusuarioRegsService/Search_UsuariosRequest", output = "http://usersinfoService.service.clinicawebservice.com/TusuarioRegsService/Search_UsuariosResponse")
+    public TuserregDto searchUsuarios(
+        @WebParam(name = "Usuario", targetNamespace = "")
+        TuserregDto usuario);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "updateUserReg", targetNamespace = "http://usersinfoService.service.clinicawebservice.com/", className = "service.UpdateUserReg")
+    @ResponseWrapper(localName = "updateUserRegResponse", targetNamespace = "http://usersinfoService.service.clinicawebservice.com/", className = "service.UpdateUserRegResponse")
+    @Action(input = "http://usersinfoService.service.clinicawebservice.com/TusuarioRegsService/updateUserRegRequest", output = "http://usersinfoService.service.clinicawebservice.com/TusuarioRegsService/updateUserRegResponse")
+    public boolean updateUserReg(
+        @WebParam(name = "arg0", targetNamespace = "")
+        TuserregDto arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns service.TuserregDto
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "validateCredencial", targetNamespace = "http://usersinfoService.service.clinicawebservice.com/", className = "service.ValidateCredencial")
+    @ResponseWrapper(localName = "validateCredencialResponse", targetNamespace = "http://usersinfoService.service.clinicawebservice.com/", className = "service.ValidateCredencialResponse")
+    @Action(input = "http://usersinfoService.service.clinicawebservice.com/TusuarioRegsService/validateCredencialRequest", output = "http://usersinfoService.service.clinicawebservice.com/TusuarioRegsService/validateCredencialResponse")
+    public TuserregDto validateCredencial(
+        @WebParam(name = "arg0", targetNamespace = "")
+        TuserregDto arg0);
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<service.TuserregDto>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "listUsersRegs", targetNamespace = "http://usersinfoService.service.clinicawebservice.com/", className = "service.ListUsersRegs")
+    @ResponseWrapper(localName = "listUsersRegsResponse", targetNamespace = "http://usersinfoService.service.clinicawebservice.com/", className = "service.ListUsersRegsResponse")
+    @Action(input = "http://usersinfoService.service.clinicawebservice.com/TusuarioRegsService/listUsersRegsRequest", output = "http://usersinfoService.service.clinicawebservice.com/TusuarioRegsService/listUsersRegsResponse")
+    public List<TuserregDto> listUsersRegs();
+
+    /**
+     * 
      * @param arg0
      * @return
      *     returns boolean
@@ -54,62 +111,5 @@ public interface TusuarioRegsService {
     public boolean insertUsersRegs(
         @WebParam(name = "arg0", targetNamespace = "")
         TuserregDto arg0);
-
-    /**
-     * 
-     * @return
-     *     returns java.util.List<service.TuserregDto>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "listUsersRegs", targetNamespace = "http://usersinfoService.service.clinicawebservice.com/", className = "service.ListUsersRegs")
-    @ResponseWrapper(localName = "listUsersRegsResponse", targetNamespace = "http://usersinfoService.service.clinicawebservice.com/", className = "service.ListUsersRegsResponse")
-    @Action(input = "http://usersinfoService.service.clinicawebservice.com/TusuarioRegsService/listUsersRegsRequest", output = "http://usersinfoService.service.clinicawebservice.com/TusuarioRegsService/listUsersRegsResponse")
-    public List<TuserregDto> listUsersRegs();
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns service.TuserregDto
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "validateCredencial", targetNamespace = "http://usersinfoService.service.clinicawebservice.com/", className = "service.ValidateCredencial")
-    @ResponseWrapper(localName = "validateCredencialResponse", targetNamespace = "http://usersinfoService.service.clinicawebservice.com/", className = "service.ValidateCredencialResponse")
-    @Action(input = "http://usersinfoService.service.clinicawebservice.com/TusuarioRegsService/validateCredencialRequest", output = "http://usersinfoService.service.clinicawebservice.com/TusuarioRegsService/validateCredencialResponse")
-    public TuserregDto validateCredencial(
-        @WebParam(name = "arg0", targetNamespace = "")
-        TuserregDto arg0);
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns boolean
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "updateUserReg", targetNamespace = "http://usersinfoService.service.clinicawebservice.com/", className = "service.UpdateUserReg")
-    @ResponseWrapper(localName = "updateUserRegResponse", targetNamespace = "http://usersinfoService.service.clinicawebservice.com/", className = "service.UpdateUserRegResponse")
-    @Action(input = "http://usersinfoService.service.clinicawebservice.com/TusuarioRegsService/updateUserRegRequest", output = "http://usersinfoService.service.clinicawebservice.com/TusuarioRegsService/updateUserRegResponse")
-    public boolean updateUserReg(
-        @WebParam(name = "arg0", targetNamespace = "")
-        TuserregDto arg0);
-
-    /**
-     * 
-     * @param usuario
-     * @return
-     *     returns service.TuserregDto
-     */
-    @WebMethod(operationName = "Search_Usuarios")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "Search_Usuarios", targetNamespace = "http://usersinfoService.service.clinicawebservice.com/", className = "service.SearchUsuarios")
-    @ResponseWrapper(localName = "Search_UsuariosResponse", targetNamespace = "http://usersinfoService.service.clinicawebservice.com/", className = "service.SearchUsuariosResponse")
-    @Action(input = "http://usersinfoService.service.clinicawebservice.com/TusuarioRegsService/Search_UsuariosRequest", output = "http://usersinfoService.service.clinicawebservice.com/TusuarioRegsService/Search_UsuariosResponse")
-    public TuserregDto searchUsuarios(
-        @WebParam(name = "Usuario", targetNamespace = "")
-        TuserregDto usuario);
 
 }

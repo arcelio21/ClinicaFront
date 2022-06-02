@@ -1,0 +1,22 @@
+article{
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    gap: 2%;
+    justify-content: start;
+}
+
+.table_province{
+    overflow:auto !important;
+    display: flex;
+    justify-content: center;
+
+}
+.table_province__data{
+
+
+}
+
+.iconDelete{
+    color: #981a1a !important;
+}

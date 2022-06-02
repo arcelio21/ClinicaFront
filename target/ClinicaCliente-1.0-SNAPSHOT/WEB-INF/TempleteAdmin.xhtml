@@ -3,13 +3,13 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:jsf="http://xmlns.jcp.org/jsf"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
-    <head>
+    <h:head>
         <ui:insert name="title">
             <title>Home Administrador</title>
-            <link rel="stylesheet" type="text/css" href="../resources/css/templateAdmin.css"/>
         </ui:insert>
-
-    </head>
+        <h:outputStylesheet library="css" name="refAdmin.css" />
+        <h:outputStylesheet library="css" name="templateAdmin.css" />
+    </h:head>
 
     <body>
         <div id="container">
@@ -24,16 +24,13 @@
 
        </header>
        <nav>
+           <ui:include src="referencesList/refAdminList.xhtml" />
            <ui:insert name="nav">
                <h2>Administrador</h2>
            </ui:insert>
 
        </nav>
 
-        <aside >
-            <ui:include src="referencesList/refAdminList.xhtml" />
-
-        </aside>
 
         <article>
             <ui:insert name="body">
