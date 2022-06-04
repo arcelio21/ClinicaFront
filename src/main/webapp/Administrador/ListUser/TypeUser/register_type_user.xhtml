@@ -1,0 +1,49 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                template="../../../WEB-INF/TempleteAdmin.xhtml">
+
+    <ui:define name="title">
+        <title>Tipos Usuarios</title>
+        <h:outputStylesheet library="css" name="/Administrador/ListUser/typeUser.css" />
+    </ui:define>
+
+
+    <ui:define name="body">
+       <div id="table__TypeUser" class="table__typeuser">
+           <p:outputPanel id="panelTypeUser">
+               <p:dataTable id="data_type_user" value="#{typeUser.ttypeUserDtoList}" var="ttypeUser" selectionMode="single" rowKey="#{ttypeUser.id}"   >
+                   <p:column style="text-align: center" headerText="Editar">
+                       <h:form>
+                           <p:commandLink id="btnUpdate" actionListener="#{typeUser.modTypeUser(ttypeUser)}" update=":editProvincedlg" oncomplete="PF('editProv').show()">
+                                <i class="pi pi-pencil" />
+                           </p:commandLink>
+                       </h:form>
+                   </p:column>
+
+                   <p:column headerText="ID" style="text-align: center">
+                       <p:outputLabel value="#{ttypeUser.id}" />
+                   </p:column>
+
+                   <p:column headerText="Nombre" style="text-align: center">
+                       <p:outputLabel value="#{ttypeUser.nameTypeUser}" />
+                   </p:column>
+
+                   <p:column headerText="Estado" style="text-align: center" >
+                       <span class="tag_status" style="background-color:#{typeUser.colorStatus(ttypeUser.idStatusId)}; border-radius:5px; color:green; font-weight:bold; padding:2%">
+                           #{typeUser.showNameStatus(ttypeUser.idStatusId)}
+                       </span>
+                   </p:column>
+
+                   <p:column headerText="Eliminar" style="text-align: center">
+                       <i class="pi pi-trash" />
+                   </p:column>
+               </p:dataTable>
+           </p:outputPanel>
+       </div>
+
+        <ui:include src="updateTypeUser.xhtml"/>
+    </ui:define>
+</ui:composition>

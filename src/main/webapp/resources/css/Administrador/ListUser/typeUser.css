@@ -6,18 +6,8 @@ article{
     justify-content: start;
 }
 
-.table_province{
+.table__typeuser{
     overflow:auto !important;
     display: flex;
-    justify-content: center;
-
-}
-.table_province__data{
-
-
-}
-
-.iconDelete{
-    color: #981a1a !important;
-
+    justify-content: center ;
 }
